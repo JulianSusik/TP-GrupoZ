@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio</title>
+    <link rel="stylesheet" href="css/pagina-inicio.css">
   </head>
   <body>
     <header>
@@ -12,7 +13,7 @@
           <img src="img/logo.png" alt="Logo del sitio" />
         </div>
 
-        
+        <!-- Buscador con datalist -->
         <div class="busqueda">
           <input list="cursos" placeholder="Buscar cursos..." />
           <datalist id="cursos">
@@ -22,13 +23,13 @@
           </datalist>
         </div>
 
-        
+        <!-- Carrito con contador fijo -->
         <div class="carrito">
           <img src="img/carrito-de-compras.png" alt="Carrito del sitio" />
           <span class="contador">3</span>
         </div>
 
-      
+        <!-- Menú principal -->
         <nav>
           <ul>
             <li><a href="#">Inicio</a></li>
@@ -39,16 +40,16 @@
       </div>
     </header>
 
-   
+    <!-- Contenido principal -->
     <main>
       <h1>Aprende las habilidades del futuro</h1>
 
-   
+      <!-- Slider -->
       <section class="slider">
         <img src="img/imagen-principal.jpg" alt="Imagen principal" />
       </section>
 
-      
+      <!-- Pasos inscripción -->
       <section>
         <h2>Pasos de inscripción a los cursos</h2>
         <ol class="listado-pasos">
@@ -59,7 +60,7 @@
         </ol>
       </section>
 
-     
+      <!-- Cursos destacados -->
       <section>
         <h2>Cursos destacados</h2>
         <div class="cursos-destacados">
@@ -75,10 +76,22 @@
             <p>Precio: $70</p>
             <button>Ver detalle</button>
           </article>
+          <article>
+            <h3>Curso de JavaScript</h3>
+            <p>Duración: 12 semanas</p>
+            <p>Precio: $120</p>
+            <button>Ver detalle</button>
+          </article>
+          <article>
+            <h3>Curso de Base de datos</h3>
+            <p>Duración: 13 semanas</p>
+            <p>Precio: $1200</p>
+            <button>Ver detalle</button>
+          </article>
         </div>
       </section>
 
-     
+      <!-- Medios de pago -->
       <section>
         <h2>Medios de pago</h2>
         <div class="medios-de-pago">
@@ -89,10 +102,10 @@
       </section>
     </main>
 
-
+<!-- Footer -->
     <footer>
       <div class="contenedor-footer">
-      
+        <!-- Columna 1: Datos del grupo -->
         <div class="columna">
           <h3>Integrantes</h3>
           <ul>
@@ -104,7 +117,7 @@
           </ul>
         </div>
 
-        
+        <!-- Columna 2: Menú inferior -->
         <div class="columna">
           <h3>Menú</h3>
           <ul>
@@ -114,7 +127,7 @@
           </ul>
         </div>
 
-     
+        <!-- Columna 3: Redes sociales -->
         <div class="columna">
           <h3>Síguenos</h3>
           <ul>
@@ -128,4 +141,6 @@
     </div>
   </body>
 </html>
+
+
 
