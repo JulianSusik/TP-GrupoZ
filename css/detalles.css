@@ -6,6 +6,10 @@
   margin-bottom: 3rem;
 }
 
+.info-curso p{
+  margin-bottom: 0.5rem;
+}
+
 
 .foto-curso {
   width: 250px;
@@ -26,7 +30,7 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 4rem;
 }
 
 .titulo-curso {
