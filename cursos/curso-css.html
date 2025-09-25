@@ -3,17 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detalle del Curso</title>
-    <link rel="stylesheet" href="../css/pagina-inicio.css">
+    <title>Curso de CSS</title>
+    <link rel="stylesheet" href="../css/detalles.css">
   </head>
   <body>
     <header>
       <div class="contenedor-header">
         <div class="logo">
-          <img src="../img/logo.png" alt="Logo del sitio" />
+          <a href="../index.html"><img src="../img/logo.png" alt="Logo del sitio" /></a>
         </div>
-
-        <!-- Buscador con datalist -->
         <div class="busqueda">
           <input list="cursos" placeholder="Buscar cursos..." />
           <datalist id="cursos">
@@ -22,17 +20,13 @@
             <option value="JavaScript Inicial" />
           </datalist>
         </div>
-
-        <!-- Carrito con contador fijo -->
         <div class="carrito">
           <img src="../img/carrito-de-compras.png" alt="Carrito del sitio" />
           <span class="contador">3</span>
         </div>
-
-        <!-- Menú principal -->
         <nav>
           <ul>
-            <li><a href="#">Inicio</a></li>
+            <li><a href="../index.html">Inicio</a></li>
             <li><a href="#">Cursos</a></li>
             <li><a href="#">Contacto</a></li>
           </ul>
@@ -40,46 +34,90 @@
       </div>
     </header>
 
-    <!-- Contenido principal -->
     <main>
+      <div class="info-curso">
+        <div class="foto-curso">FOTO</div>
+        <div>
+          <h1 class="titulo-curso">Curso de CSS</h1>
+          <p><strong>Valor:</strong> $70</p>
+          <p><strong>Tiempo de dedicación necesario:</strong> 6 semanas</p>
+          <p><strong>Descripción del curso:</strong> Aprende a diseñar y dar estilo profesional a tus páginas web con CSS3.</p>
+          <p><strong>Requisitos previos:</strong> Conocimientos básicos de HTML</p>
+          <button class="btn-inscribirse">INSCRIBIRSE</button>
+        </div>
+      </div>
 
- <!-- Cursos destacados -->
-      <section>
-        <h2>Cursos destacados</h2>
-        <div class="cursos-destacados">
-          <article>
-            <h3>Curso de HTML</h3>
-            <p>Duración: 4 semanas</p>
-            <p>Precio: $50</p>
-            <a href="curso-html.html"><button>Ver detalle</button></a>
-          </article>
-          <article>
-            <h3>Curso de CSS</h3>
-            <p>Duración: 6 semanas</p>
-            <p>Precio: $70</p>
-            <a href="curso-css.html"><button>Ver detalle</button></a>
-          </article>
-          <article>
-            <h3>Curso de JavaScript</h3>
-            <p>Duración: 12 semanas</p>
-            <p>Precio: $120</p>
-            <a href="curso-js.html"><button>Ver detalle</button></a>
-          </article>
-          <article>
-            <h3>Curso de Base de datos</h3>
-            <p>Duración: 13 semanas</p>
-            <p>Precio: $1200</p>
-            <a href="curso-db.html"><button>Ver detalle</button></a>
-          </article>
+      <h2>Contenidos por clase</h2>
+      <div class="contenidos">
+        <details open>
+          <summary>Unidad 1 - Introducción a CSS</summary>
+          <ul>
+            <li>1.1 Selectores básicos - 20 min</li>
+            <li>1.2 Colores y tipografías - 25 min</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Unidad 2 - Modelo de caja</summary>
+          <ul>
+            <li>2.1 Márgenes y paddings - 30 min</li>
+            <li>2.2 Bordes y sombras - 20 min</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Unidad 3 - Diseño avanzado</summary>
+          <ul>
+            <li>3.1 Flexbox - 40 min</li>
+            <li>3.2 Grid Layout - 50 min</li>
+          </ul>
+        </details>
+      </div>
+
+      <section class="docente">
+        <h1 class="nombre-docente">Docente</h1>
+        <div class="perfil-docente">
+          <div class="foto-docente"></div>
+          <div>
+            <h3>Laura Martínez</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>Diseñadora web con 10 años de experiencia en UI/UX y desarrollo frontend.</p>
+          </div>
         </div>
       </section>
-
     </main>
 
-<!-- Footer -->
+    <!-- Cursos destacados -->
+    <section>
+      <h2>Cursos destacados</h2>
+      <div class="cursos-destacados">
+        <article>
+          <h3>Curso de HTML</h3>
+          <p>Duración: 4 semanas</p>
+          <p>Precio: $50</p>
+          <a href="curso-html.html"><button>Ver detalle</button></a>
+        </article>
+        <article>
+          <h3>Curso de CSS</h3>
+          <p>Duración: 6 semanas</p>
+          <p>Precio: $70</p>
+          <a href="curso-css.html"><button>Ver detalle</button></a>
+        </article>
+        <article>
+          <h3>Curso de JavaScript</h3>
+          <p>Duración: 12 semanas</p>
+          <p>Precio: $120</p>
+          <a href="curso-js.html"><button>Ver detalle</button></a>
+        </article>
+        <article>
+          <h3>Curso de Base de datos</h3>
+          <p>Duración: 13 semanas</p>
+          <p>Precio: $1200</p>
+          <a href="curso-db.html"><button>Ver detalle</button></a>
+        </article>
+      </div>
+    </section>
+
     <footer>
       <div class="contenedor-footer">
-        <!-- Columna 1: Datos del grupo -->
         <div class="columna">
           <h3>Integrantes</h3>
           <ul>
@@ -87,11 +125,8 @@
             <li>Luis Maurcicio Frieri - DNI 30700098</li>
             <li>Agustin Fernando Pelle - DNI 42116498</li>
             <li>Julian Alan Susik - DNI</li>
-            <li></li>
           </ul>
         </div>
-
-        <!-- Columna 2: Menú inferior -->
         <div class="columna">
           <h3>Menú</h3>
           <ul>
@@ -100,8 +135,6 @@
             <li><a href="#">Ayuda</a></li>
           </ul>
         </div>
-
-        <!-- Columna 3: Redes sociales -->
         <div class="columna">
           <h3>Síguenos</h3>
           <ul>
@@ -112,9 +145,5 @@
         </div>
       </div>
     </footer>
-    </div>
   </body>
 </html>
-
-
-

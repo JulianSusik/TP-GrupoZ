@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detalle del Curso</title>
-    <link rel="stylesheet" href="../css/pagina-inicio.css">
+    <title>Curso de HTML</title>
+    <link rel="stylesheet" href="../css/detalles.css">
   </head>
   <body>
     <header>
       <div class="contenedor-header">
         <div class="logo">
-          <img src="../img/logo.png" alt="Logo del sitio" />
+          <a href="../index.html"><img src="../img/logo.png" alt="Logo del sitio" /></a>
         </div>
 
         <!-- Buscador con datalist -->
@@ -32,7 +32,7 @@
         <!-- Menú principal -->
         <nav>
           <ul>
-            <li><a href="#">Inicio</a></li>
+            <li><a href="../index.html">Inicio</a></li>
             <li><a href="#">Cursos</a></li>
             <li><a href="#">Contacto</a></li>
           </ul>
@@ -42,41 +42,85 @@
 
     <!-- Contenido principal -->
     <main>
+      <div class="info-curso">
+        <div class="foto-curso">FOTO</div>
+        <div>
+        <h1 class="titulo-curso">Curso de HTML</h1>
+          <p><strong>Valor:</strong> $50</p>
+          <p><strong>Tiempo de dedicación necesario:</strong> 4 semanas</p>
+          <p><strong>Descripción del curso:</strong> Aprende a crear páginas web con HTML desde cero.</p>
+          <p><strong>Requisitos previos:</strong> Ninguno</p>
+          <button class="btn-inscribirse">INSCRIBIRSE</button>
+        </div>
+      </div>
 
- <!-- Cursos destacados -->
-      <section>
-        <h2>Cursos destacados</h2>
-        <div class="cursos-destacados">
-          <article>
-            <h3>Curso de HTML</h3>
-            <p>Duración: 4 semanas</p>
-            <p>Precio: $50</p>
-            <a href="curso-html.html"><button>Ver detalle</button></a>
-          </article>
-          <article>
-            <h3>Curso de CSS</h3>
-            <p>Duración: 6 semanas</p>
-            <p>Precio: $70</p>
-            <a href="curso-css.html"><button>Ver detalle</button></a>
-          </article>
-          <article>
-            <h3>Curso de JavaScript</h3>
-            <p>Duración: 12 semanas</p>
-            <p>Precio: $120</p>
-            <a href="curso-js.html"><button>Ver detalle</button></a>
-          </article>
-          <article>
-            <h3>Curso de Base de datos</h3>
-            <p>Duración: 13 semanas</p>
-            <p>Precio: $1200</p>
-            <a href="curso-db.html"><button>Ver detalle</button></a>
-          </article>
+      <h2>Contenidos por clase</h2>
+      <div class="contenidos">
+        <details open>
+          <summary>Introducción</summary>
+          <ul>
+            <li>1.1 ¿Qué es HTML? - 10 min</li>
+            <li>1.2 Estructura básica - 15 min</li>
+            <li>1.3 Etiquetas principales - 20 min</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Unidad 2</summary>
+          <ul>
+            <li>2.1 Listas y tablas - 25 min</li>
+            <li>2.2 Formularios - 30 min</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Examen</summary>
+        </details>
+      </div>
+
+      <section class="docente">
+        <h1 class="nombre-docente">Docente</h1>
+        <div class="perfil-docente">
+          <div class="foto-docente"></div>
+          <div>
+            <h3>Nombre y Apellido</h3>
+            <p>⭐⭐⭐⭐☆</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Experiencia en desarrollo web y enseñanza.</p>
+          </div>
         </div>
       </section>
-
     </main>
 
-<!-- Footer -->
+    <!-- Cursos destacados -->
+    <section>
+      <h2>Cursos destacados</h2>
+      <div class="cursos-destacados">
+        <article>
+          <h3>Curso de HTML</h3>
+          <p>Duración: 4 semanas</p>
+          <p>Precio: $50</p>
+          <a href="curso-html.html"><button>Ver detalle</button></a>
+        </article>
+        <article>
+          <h3>Curso de CSS</h3>
+          <p>Duración: 6 semanas</p>
+          <p>Precio: $70</p>
+          <a href="curso-css.html"><button>Ver detalle</button></a>
+        </article>
+        <article>
+          <h3>Curso de JavaScript</h3>
+          <p>Duración: 12 semanas</p>
+          <p>Precio: $120</p>
+          <a href="curso-js.html"><button>Ver detalle</button></a>
+        </article>
+        <article>
+          <h3>Curso de Base de datos</h3>
+          <p>Duración: 13 semanas</p>
+          <p>Precio: $1200</p>
+          <a href="curso-db.html"><button>Ver detalle</button></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
       <div class="contenedor-footer">
         <!-- Columna 1: Datos del grupo -->
@@ -112,9 +156,5 @@
         </div>
       </div>
     </footer>
-    </div>
   </body>
 </html>
-
-
-
