@@ -32,6 +32,7 @@
   border-radius: 4px;
   cursor: pointer;
   margin-top: 2rem;
+  margin-left: -1%;
 }
 
 .titulo-curso {
@@ -41,7 +42,8 @@
 
 .titulo-contenido {
   text-align: left;
-  margin: 0 0 0rem;
+  margin: 0%;
+  margin-top: -2%;
   margin-left: 15%;
 }
 .nombre-docente {
