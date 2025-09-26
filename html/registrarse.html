@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/registrarse.css" />
+    <title>Registrarse</title>
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <h1 class="title">Registrarse</h1>
+        <p class="subtitle">Completa el formulario para registrarte</p>
+
+        <form class="login-form" action="#">
+          <fieldset>
+            <legend>Datos personales</legend>
+
+            <div class="campo">
+              <label for="nombre">Nombre:</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Ingresar nombre"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label for="apellido">Apellido:</label>
+              <input
+                type="text"
+                id="apellido"
+                name="apellido"
+                placeholder="Ingresar apellido"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label for="email">Email:</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="Ingresar email"
+              />
+            </div>
+
+            <div class="campo">
+              <label for="nombre-usuario">Nombre de Usuario:</label>
+              <input
+                type="text"
+                id="nombre-usuario"
+                name="nombre-usuario"
+                placeholder="Ingresar nombre de usuario"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label for="contrasenia">Contraseña:</label>
+              <input
+                type="password"
+                id="contrasenia"
+                name="contrasenia"
+                placeholder="Ingrese contraseña"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label for="repetir-contrasenia">Repetir Contraseña:</label>
+              <input
+                type="password"
+                id="repetir-contrasenia"
+                name="repetir-contrasenia"
+                placeholder="Repetir contraseña"
+                required
+              />
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Métodos de Pago</legend>
+
+            <div class="campo">
+              <label>
+                <input
+                  id="tarjeta"
+                  type="radio"
+                  name="metodoPago"
+                  value="tarjeta"
+                  checked
+                />
+                Tarjeta de Crédito
+              </label>
+            </div>
+
+            <div class="campo">
+              <label for="numeroTarjeta">Número de tarjeta:</label>
+              <input
+                type="text"
+                id="numeroTarjeta"
+                name="numeroTarjeta"
+                inputmode="numeric"
+                pattern="[0-9]{13,19}"
+                maxlength="19"
+              />
+            </div>
+
+            <div class="campo">
+              <label for="codigoSeguridad">Código de seguridad:</label>
+              <input
+                type="text"
+                id="codigoSeguridad"
+                name="codigoSeguridad"
+                inputmode="numeric"
+                pattern="[0-9]{3,4}"
+                maxlength="4"
+              />
+            </div>
+
+            <div class="campo">
+              <label>
+                <input
+                  id="cupon"
+                  type="radio"
+                  name="metodoPago"
+                  value="cupon"
+                />
+                Cupón de pago
+              </label>
+            </div>
+
+            <div class="campo">
+              <label>
+                <input
+                  id="pago-facil"
+                  type="checkbox"
+                  name="formaPago"
+                  value="pago-facil"
+                />
+                Pago Fácil
+              </label>
+              <label>
+                <input
+                  id="rapipago"
+                  type="checkbox"
+                  name="formaPago"
+                  value="rapipago"
+                />
+                Rápipago
+              </label>
+            </div>
+
+            <div class="campo">
+              <label>
+                <input
+                  id="transferencia"
+                  type="radio"
+                  name="metodoPago"
+                  value="transferencia"
+                />
+                Transferencia bancaria
+              </label>
+              <span>CBU: 0123456789012345678901</span>
+            </div>
+          </fieldset>
+
+          <div class="acciones">
+            <button type="submit" class="btn">CONFIRMAR</button>
+            <a href="index.html" class="btn cancelar">CANCELAR</a>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
