@@ -1,0 +1,165 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor principal */
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem;
+}
+
+/* Main */
+main {
+  width: 100%;
+}
+
+/* Títulos */
+.title {
+  font-size: 2rem;
+  color: black;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  text-align: center;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* Formulario */
+.login-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+/* Campos */
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.campo label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.campo input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.campo input:focus {
+  border-color: black;
+  outline: none;
+}
+
+/* Botones */
+.acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.acciones .btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: gainsboro;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none; /* para <a> */
+  transition: background 0.3s;
+}
+
+.acciones .btn:hover {
+  background: #343b49;
+}
+
+.acciones .btn.cancelar {
+  background: #999;
+}
+
+.acciones .btn.cancelar:hover {
+  background: #777;
+}
+
+/* --------- Responsividad --------- */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .login-form {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+
+  legend {
+    font-size: 1.2rem;
+  }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+  .login-form {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .campo input {
+    font-size: 0.9rem;
+  }
+
+  .acciones .btn {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+}
