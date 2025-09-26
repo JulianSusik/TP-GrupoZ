@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/recuperar.css" />
+    <title>Recuperar Contraseña</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <main>
+        <h1 class="title">Recuperar Contraseña</h1>
+        <p class="subtitle">Ingresá tu email y nombre de usuario</p>
+
+        <form class="login-form" action="#">
+          <fieldset>
+            <legend>Datos de recuperación</legend>
+
+            <div class="campo">
+              <label for="email">Email:</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="Ingresar email"
+              />
+            </div>
+
+            <div class="campo">
+              <label for="nombre-usuario">Nombre de Usuario:</label>
+              <input
+                type="text"
+                id="nombre-usuario"
+                name="nombre-usuario"
+                placeholder="Ingresar nombre de usuario"
+                required
+              />
+            </div>
+          </fieldset>
+
+          <div class="acciones">
+            <div class="acciones">
+              <a href="index.html" class="btn">ENVIAR EMAIL</a>
+              <a href="index.html" class="btn">CANCELAR</a>
+            </div>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
