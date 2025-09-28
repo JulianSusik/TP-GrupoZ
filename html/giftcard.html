@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../css/giftcard.css"/>
+  <link rel="stylesheet" href="../css/header-footer.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Giftcard</title>
+</head>
+
+<body>
+
+<!-- HEADER --> 
+<header>
+  <div class="contenedor-header">
+    <div class="logo">
+      <img src="../img/logo.png" alt="Logo del sitio" />
+    </div>
+
+    
+    <div class="busqueda">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input list="cursos" placeholder="Buscar cursos..." />
+      <datalist id="cursos">
+        <option value="HTML Básico"/>
+        <option value="CSS Avanzado" />
+        <option value="JavaScript Inicial" />
+         <option value="Base de Datos" />
+      </datalist>
+    </div>
+
+    
+    <div class="carrito">
+      <img src="../img/carrito-de-compras.png" alt="Carrito del sitio" />
+      <span class="contador">3</span>
+    </div>
+
+   
+    <nav>
+      <ul>
+        <li><a href="home.html">Inicio</a></li>
+        <li><a href="calendario.html">Calendario</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="giftcard.html">Giftcard</a></li>
+        <li><a href="formulario.html">Inscripción</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main class="layout">
+    <!-- ====== VISTA PREVIA ====== -->
+    <section class="preview-area" aria-label="Vista previa de gift card">
+      <div class="card"
+           id="card"
+           data-pos="tr"    <!-- posición inicial del monto: top-right -->
+        
+        <!-- Monto -->
+        <div class="amount-badge" id="amountBadge">
+          <span id="amountText">$0000.-</span>
+        </div>
+
+        <!-- Contenido de la tarjeta -->
+        <div class="card-inner">
+          <p class="card-subtitle">GIFT CARD para</p>
+          <h2 class="card-name" id="cardName">Destinatario</h2>
+        </div>
+
+        <!-- Leyenda -->
+        <p class="preview-caption">VISTA PREVIA DE RESULTADO DE PERSONALIZACIÓN</p>
+      </div>
+    </section>
+
+    <!-- ====== CONTROLES ====== -->
+    <section class="controls" aria-label="Controles de personalización">
+      <!-- Nombre -->
+      <h3 class="page-header">Personalización de Giftcard</h3>
+
+      <div class="control">
+        <input id="nombre" type="text" placeholder="Escriba el nombre aqui..." />
+      </div>
+
+      <!-- Color -->
+      <div class="control">
+        <p class="label">Color</p>
+        <div class="swatches" role="radiogroup" aria-label="Color de texto">
+          <label class="swatch">
+            <input type="radio" name="color" value="#111" checked />
+            <span style="--c:#111"></span>
+          </label>
+          <label class="swatch">
+            <input type="radio" name="color" value="#6a1b9a" />
+            <span style="--c:#6a1b9a"></span>
+          </label>
+          <label class="swatch">
+            <input type="radio" name="color" value="#1565c0" />
+            <span style="--c:#1565c0"></span>
+          </label>
+          <label class="swatch">
+            <input type="radio" name="color" value="#2e7d32" />
+            <span style="--c:#2e7d32"></span>
+          </label>
+          <label class="swatch">
+            <input type="radio" name="color" value="#e65100" />
+            <span style="--c:#e65100"></span>
+          </label>
+          <label class="swatch">
+            <input type="radio" name="color" value="#757575" />
+            <span style="--c:#757575"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Tamaño de fuente -->
+      <div class="control">
+        <p class="label">Tamaño de fuente</p>
+        <div class="sizes" role="radiogroup" aria-label="Tamaño de fuente">
+          <label class="tamaño1"><input type="radio" name="size" value="20" /> 20px</label>
+          <label class="tamaño2"><input type="radio" name="size" value="28" /> 28px</label>
+          <label class="tamaño3"><input type="radio" name="size" value="32" checked /> 32px</label>
+          <label class="tamaño4"><input type="radio" name="size" value="48" /> 48px</label>
+          <label class="tamaño5"><input type="radio" name="size" value="60" /> 60px</label>
+        </div>
+      </div>
+
+      <!-- Monto -->
+      <div class="control">
+        <label class="label" for="monto">Monto $</label>
+        <input id="monto" type="number" min="0" step="1" placeholder="Ingrese el monto aqui..." />
+      </div>
+
+      <!-- Ubicación del monto -->
+      <div class="control">
+        <p class="label">Ubicación</p>
+        <div class="pos-grid" role="radiogroup" aria-label="Ubicación del monto">
+          <!-- TL TR BL BR + centro superior e inferior si deseas -->
+          <label class="pos">
+            <input type="radio" name="pos" value="tl" />
+            <span data-pos="tl"></span>
+          </label>
+          <label class="pos">
+            <input type="radio" name="pos" value="tc" />
+            <span data-pos="tc"></span>
+          </label>
+          <label class="pos">
+            <input type="radio" name="pos" value="tr" checked />
+            <span data-pos="tr"></span>
+          </label>
+          <label class="pos">
+            <input type="radio" name="pos" value="bl" />
+            <span data-pos="bl"></span>
+          </label>
+          <label class="pos">
+            <input type="radio" name="pos" value="bc" />
+            <span data-pos="bc"></span>
+          </label>
+          <label class="pos">
+            <input type="radio" name="pos" value="br" />
+            <span data-pos="br"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Fondo -->
+      <div class="control">
+        <p class="label">Fondo</p>
+        <div class="bg-list">
+          <!-- Puedes cambiar los backgrounds por imágenes propias -->
+          <label class="bg">
+            <input type="radio" name="bg" value="solid" checked />
+            <span class="bg-chip" style="--bg:#bdbdbd">A</span>
+          </label>
+          <label class="bg">
+            <input type="radio" name="bg" value="gradient" />
+            <span class="bg-chip grad">B</span>
+          </label>
+          <label class="bg">
+            <input type="radio" name="bg" value="pattern" />
+            <span class="bg-chip pattern">C</span>
+          </label>
+          <label class="bg">
+            <input type="radio" name="bg" value="photo" />
+            <span class="bg-chip photo">D</span>
+          </label>
+        </div>
+      </div>
+
+      <div> 
+         <button type="button" class="btn" id="confirmBtn">CONFIRMAR</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="contenedor-footer">
+      <!-- Columna 1: Datos del grupo -->
+      <div class="columna">
+        <h3>Integrantes</h3>
+        <ul>
+          <li>Ana Maria Alderete - DNI 36782140</li>
+          <li>Luis Maurcicio Frieri - DNI 30700098</li>
+          <li>Agustin Fernando Pelle - DNI 42116498</li>
+          <li>Julian Alan Susik - DNI 44816527</li>
+          <li></li>
+        </ul>
+      </div>
+
+      <!-- Columna 2: Menú inferior -->
+      <div class="columna">
+        <h3>Menú</h3>
+        <ul>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Redes sociales -->
+      <div class="columna">
+        <h3>Síguenos</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
