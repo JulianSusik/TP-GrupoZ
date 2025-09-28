@@ -1,99 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/calendario.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/calendario.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <title>Calendario</title>
-</head>
-<body>
-<header>
+  </head>
+  <body>
+    <header>
       <div class="contenedor-header">
         <div class="logo">
-          <img src="../img/logo.png" alt="Logo del sitio" />
+          <a href="../html/home.html"
+            ><img src="../img/logo.png" alt="Logo del sitio"
+          /></a>
         </div>
 
-        <!-- Buscador con datalist -->
         <div class="busqueda">
+          <i class="fa-solid fa-magnifying-glass"></i>
           <input list="cursos" placeholder="Buscar cursos..." />
           <datalist id="cursos">
-            <option value="HTML Básico">
-            <option value="CSS Avanzado">
-            <option value="JavaScript Inicial">
+            <option value="HTML Básico" />
+            <option value="CSS Avanzado" />
+            <option value="JavaScript Inicial" />
+            <option value="Base de Datos" />
           </datalist>
         </div>
 
-        <!-- Carrito con contador fijo -->
         <div class="carrito">
           <img src="../img/carrito-de-compras.png" alt="Carrito del sitio" />
           <span class="contador">3</span>
         </div>
 
-        <!-- Menú principal -->
         <nav>
           <ul>
-            <li><a href="../html/inicio.html">Inicio</a></li>
-            <li><a href="../cursos/curso-css.html">Cursos</a></li>
-            <li><a href="../html/contacto.html">Contacto</a></li>
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="calendario.html">Más Cursos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="#">Perfil</a></li>
           </ul>
         </nav>
       </div>
     </header>
     <h1>Calendario</h1>
     <div class="container">
-        <ol class="ol">
-            <li class="day">Lun</li>
-            <li class="day">Mar</li>
-            <li class="day">Mie</li>
-            <li class="day">Jue</li>
-            <li class="day">Vie</li>
-            <li class="day">Sab</li>
-            <li class="day">Dom</li>
+      <ol class="ol">
+        <li class="day">Lun</li>
+        <li class="day">Mar</li>
+        <li class="day">Mie</li>
+        <li class="day">Jue</li>
+        <li class="day">Vie</li>
+        <li class="day">Sab</li>
+        <li class="day">Dom</li>
 
-            <li class="days">1 de sep</li>
-            <li class="days">2</li>
-            <li class="days">3</li>
-            <li class="days">4</li>
-            <li class="days">5</li>
-            <li class="days">6</li>
-            <li class="days">7</li>
-            <li class="days">8</li>
-            <li class="days">9</li>
-            <li class="days">10</li>
-            <li class="days">11</li>
-            <li class="days">12</li>
-            <li class="days">13</li>
-            <li class="days">14</li>
-            <li class="days">15
-                <div class="evento">Nuevo curso de HTML</div>
-            </li>
-            <li class="days">16</li>
-            <li class="days">17</li>
-            <li class="days">18</li>
-            <li class="days">19</li>
-            <li class="days">20</li>
-            <li class="days">21</li>
-            <li class="days">22</li>
-            <li class="days">23</li>
-            <li class="days">24</li>
-            <li class="days">25</li>
-            <li class="days">26
-                <div class="evento">Nuevo curso de JavaScript</div>
-            </li>
-            <li class="days">27</li>
-            <li class="days">28</li>
-            <li class="days">29</li>
-            <li class="days">30</li>
-            <li class="days">31</li>
-            <li class="days">1 de oct</li>
-            <li class="days">2</li>
-            <li class="days">3</li>
-            <li class="days">4</li>
-        </ol>
-
+        <li class="days">1 de sep</li>
+        <li class="days">2</li>
+        <li class="days">3</li>
+        <li class="days">4</li>
+        <li class="days">5</li>
+        <li class="days">6</li>
+        <li class="days">7</li>
+        <li class="days">8</li>
+        <li class="days">9</li>
+        <li class="days">10</li>
+        <li class="days">11</li>
+        <li class="days">12</li>
+        <li class="days">13</li>
+        <li class="days">14</li>
+        <li class="days">
+          15
+          <div class="evento">Nuevo curso de HTML</div>
+        </li>
+        <li class="days">16</li>
+        <li class="days">17</li>
+        <li class="days">18</li>
+        <li class="days">19</li>
+        <li class="days">20</li>
+        <li class="days">21</li>
+        <li class="days">22</li>
+        <li class="days">23</li>
+        <li class="days">24</li>
+        <li class="days">25</li>
+        <li class="days">
+          26
+          <div class="evento">Nuevo curso de JavaScript</div>
+        </li>
+        <li class="days">27</li>
+        <li class="days">28</li>
+        <li class="days">29</li>
+        <li class="days">30</li>
+        <li class="days">31</li>
+        <li class="days">1 de oct</li>
+        <li class="days">2</li>
+        <li class="days">3</li>
+        <li class="days">4</li>
+      </ol>
     </div>
 
-<footer>
+    <footer>
       <div class="contenedor-footer">
         <!-- Columna 1: Datos del grupo -->
         <div class="columna">
@@ -128,6 +135,5 @@
         </div>
       </div>
     </footer>
-    
-</body>
+  </body>
 </html>
