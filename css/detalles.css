@@ -6,11 +6,10 @@
   margin-bottom: 3rem;
 }
 
-.info-curso p{
+.info-curso p {
   margin-bottom: 1%;
   margin-top: 2%;
 }
-
 
 .foto-curso {
   width: 250px;
@@ -22,7 +21,6 @@
   font-weight: bold;
   border-radius: 8px;
 }
-
 
 .btn-inscribirse {
   padding: 0.7rem 1.2rem;
@@ -120,7 +118,6 @@ body {
   line-height: 1.6;
 }
 
-
 /* --------- Header --------- */
 header {
   background-color: grey;
@@ -138,20 +135,39 @@ header {
 .logo img {
   max-width: 120px;
   height: auto;
+  margin-left: 1rem;
 }
 
 /* Buscador */
-.busqueda input {
+/* .busqueda input {
   padding: 0.5rem;
   border-radius: 4px;
   border: none;
+} */
+.busqueda {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.busqueda i {
+  position: absolute;
+  left: 10px;
+  color: #555;
+}
+
+.busqueda input {
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 35em;
 }
 
 /* Carrito */
 .carrito {
   position: relative;
   font-size: 24px;
-  margin-left: 1rem;
+  margin-left: 16rem;
 }
 
 .carrito .contador {
@@ -170,6 +186,7 @@ nav ul {
   display: flex;
   list-style: none;
   gap: 1rem;
+  width: 20em;
 }
 
 nav a {
@@ -347,4 +364,5 @@ footer {
     max-width: 60px;
   }
 }
+
 
