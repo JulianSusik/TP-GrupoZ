@@ -1,73 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario de Contacto</title>
-  <link rel="stylesheet" href="../css/contacto.css">
-</head>
-<body>
-  <header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="../css/contacto.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
       <div class="contenedor-header">
         <div class="logo">
-          <img src="../img/logo.png" alt="Logo del sitio" />
+          <a href="../html/home.html"
+            ><img src="../img/logo.png" alt="Logo del sitio"
+          /></a>
         </div>
 
-        <!-- Buscador con datalist -->
         <div class="busqueda">
+          <i class="fa-solid fa-magnifying-glass"></i>
           <input list="cursos" placeholder="Buscar cursos..." />
           <datalist id="cursos">
-            <option value="HTML Básico">
-            <option value="CSS Avanzado">
-            <option value="JavaScript Inicial">
+            <option value="HTML Básico" />
+            <option value="CSS Avanzado" />
+            <option value="JavaScript Inicial" />
+            <option value="Base de Datos" />
           </datalist>
         </div>
 
-        <!-- Carrito con contador fijo -->
         <div class="carrito">
           <img src="../img/carrito-de-compras.png" alt="Carrito del sitio" />
           <span class="contador">3</span>
         </div>
 
-        <!-- Menú principal -->
         <nav>
           <ul>
-            <li><a href="../html/inicio.html">Inicio</a></li>
-            <li><a href="../cursos/curso-css.html">Cursos</a></li>
-            <li><a href="../html/contacto.html">Contacto</a></li>
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="calendario.html">Más Cursos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="#">Perfil</a></li>
           </ul>
         </nav>
       </div>
     </header>
-  <main>
-    <section class="contacto-container">
-      <article class="formulario-contacto">
-        <h2>CONTACTO</h2>
-        <form>
-          <input type="text" placeholder="Nombre">
-          <input type="email" placeholder="Email">
-          <textarea placeholder="Mensaje"></textarea>
-          <button type="submit">ENVIAR</button>
-        </form>
-      </article>
+    <main>
+      <section class="contacto-container">
+        <article class="formulario-contacto">
+          <h2>CONTACTO</h2>
+          <form>
+            <input type="text" placeholder="Nombre" />
+            <input type="email" placeholder="Email" />
+            <textarea placeholder="Mensaje"></textarea>
+            <button type="submit">ENVIAR</button>
+          </form>
+        </article>
 
-      <section class="info-contacto">
-    <h2>UDEMY CURSOS</h2>
-    <p>Dirección: Florencio Varela 1903, Buenos Aires</p>
-    <p>Teléfono: +54 11 4480-8900</p>
-    <p>Email: udemy@cursos.com.ar</p>
-  </section>
-    </section>
+        <section class="info-contacto">
+          <h2>UDEMY CURSOS</h2>
+          <p>Dirección: Florencio Varela 1903, Buenos Aires</p>
+          <p>Teléfono: +54 11 4480-8900</p>
+          <p>Email: udemy@cursos.com.ar</p>
+        </section>
+      </section>
 
-    <section class="mapa">
-      <h2>UBICACIÓN</h2>
-      <div class="mapa-box"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.998650748488!2d-58.38155938519547!3d-34.60368446505368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac9c5d1f8b9%3A0x3d3f5c7b9e9d9d!2sObelisco!5e0!3m2!1ses-419!2sar!4v1695654123456!5m2!1ses-419!2sar"
-      allowfullscreen
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    </section>
-  </main>
-   <footer>
+      <section class="mapa">
+        <h2>UBICACIÓN</h2>
+        <div class="mapa-box">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.998650748488!2d-58.38155938519547!3d-34.60368446505368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac9c5d1f8b9%3A0x3d3f5c7b9e9d9d!2sObelisco!5e0!3m2!1ses-419!2sar!4v1695654123456!5m2!1ses-419!2sar"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+    <footer>
       <div class="contenedor-footer">
         <!-- Columna 1: Datos del grupo -->
         <div class="columna">
@@ -102,6 +112,5 @@
         </div>
       </div>
     </footer>
-    
-</body>
+  </body>
 </html>
