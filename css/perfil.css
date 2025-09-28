@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f4f6f9;
+}
+
+/* PERFIL USUARIO */
+.container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: rgb(171, 157, 157);
+  border-radius: 10px;
+}
+
+.perfil-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.perfil-header .title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.perfil-header .avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.nombre-usuario {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #555;
+}
+
+/* FORMULARIO */
+.perfil-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+}
+
+legend {
+  font-weight: bold;
+  color: #222;
+  padding: 0 0.5rem;
+}
+
+label {
+  display: block;
+  margin: 0.8rem 0 0.3rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.3s;
+}
+
+input:focus {
+  border-color: #202329;
+}
+
+.cupon-options {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.cbu {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* BOTONES */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #818a9c;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #343b49;
+}
+
+.btn-cancelar {
+  background-color: #aaa;
+}
+
+.btn-cancelar:hover {
+  background-color: #888;
+}
+
+.btn-cerrar {
+  margin-top: 1rem;
+  color: black;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .perfil-form {
+    padding: 1.2rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
