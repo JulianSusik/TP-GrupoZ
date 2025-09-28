@@ -6,57 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
  
   <link rel="stylesheet" href="../css/myStyleForm.css"/>
+  <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-inner">
-      <!-- Logo (izquierda) -->
-      <a class="logo" href="#" aria-label="Inicio">
-        <img src="../img/logo.png" alt="Logo del sitio">
-      </a>
-
-      <!-- Buscador (centro) -->
-      <form class="search" role="search" action="/buscar" method="get">
-        <div class="search-field">
-          <input
-            id="q"
-            name="q"
-            type="search"
-            placeholder="Buscar…"
-            autocomplete="off"
-            required
-          />
-          <button type="submit" aria-label="Buscar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M10 18a8 8 0 1 1 5.293-14.293A8 8 0 0 1 10 18zm11.707 2.293-5.387-5.387A10 10 0 1 0 10 20a9.96 9.96 0 0 0 6.08-2.027l5.387 5.387 1.24-1.24z"/>
-            </svg>
-            <span class="btn-text">Buscar</span>
-          </button>
+     <header>
+      <div class="contenedor-header">
+        <div class="logo">
+          <a href="../html/home.html"><img src="../img/logo.png" alt="Logo del sitio" /></a>
         </div>
-      </form>
 
-      <!-- Imagen derecha -->
-      <div class="header-media">
-        <img src="../img/imagentarjetas.jpg" alt="Imagen derecha">
+        
+        <div class="busqueda">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input list="cursos" placeholder="Buscar cursos..." />
+          <datalist id="cursos">
+            <option value="HTML Básico"/>
+            <option value="CSS Avanzado" />
+            <option value="JavaScript Inicial" />
+             <option value="Base de Datos" />
+          </datalist>
+        </div>
+
+        
+        <div class="carrito">
+          <img src="../img/carrito-de-compras.png" alt="Carrito del sitio" />
+          <span class="contador">3</span>
+        </div>
+
+       
+        <nav>
+          <ul>
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="calendario.html">Más Cursos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="#">Perfil</a></li>
+          </ul>
+        </nav>
       </div>
-
-      <!-- Hamburguesa (solo móvil) -->
-      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="Abrir menú">
-      <label for="navtoggle" class="nav-btn" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </label>
-    </div>
-
-    <!-- NAVBAR (debajo del header, ancho completo) -->
-    <nav class="navbar" aria-label="Menú principal">
-      <ul class="nav-list">
-        <li><a href="#">MENU</a></li>
-
-      </ul>
-    </nav>
-  </header>
+    </header>
 
   <!-- Contenido de ejemplo -->
 <main>
@@ -145,28 +134,40 @@
 </main>
 
   
-  <!-- FOOTER -->
-<footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-col">
-        <h3>Datos del grupo</h3>
-        <p>Información breve sobre el grupo, su misión y visión.</p>
-        <a href="#">Más información</a>
-      </div>
+ <footer>
+      <div class="contenedor-footer">
+        <!-- Columna 1: Datos del grupo -->
+        <div class="columna">
+          <h3>Integrantes</h3>
+          <ul>
+            <li>Ana Maria Alderete - DNI 36782140</li>
+            <li>Luis Maurcicio Frieri - DNI 30700098</li>
+            <li>Agustin Fernando Pelle - DNI 42116498</li>
+            <li>Julian Alan Susik - DNI 44816527</li>
+            <li></li>
+          </ul>
+        </div>
 
-      <div class="footer-col">
-        <h3>Empresas asociadas</h3>
-        <p>Conoce nuestras empresas asociadas y aliados estratégicos.</p>
-        <a href="#">Ver empresas</a>
-      </div>
+        <!-- Columna 2: Menú inferior -->
+        <div class="columna">
+          <h3>Menú</h3>
+          <ul>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Ayuda</a></li>
+          </ul>
+        </div>
 
-      <div class="footer-col">
-        <h3>Contacto</h3>
-        <p>¿Tienes preguntas? Ponte en contacto con nosotros.</p>
-        <a href="#">Contáctanos</a>
+        <!-- Columna 3: Redes sociales -->
+        <div class="columna">
+          <h3>Síguenos</h3>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-
-  </footer>
+    </footer>
 </body>
 </html>
