@@ -14,7 +14,7 @@ header {
 }
 
 .logo img {
-  max-width: 120px;
+  max-width: 120%;
   height: auto;
 }
 
@@ -29,38 +29,38 @@ header {
   display: flex;
   align-items: center;
     flex: 1; /* ocupa espacio flexible */
-  max-width: 500px; /* límite en pantallas grandes */
+  max-width: 80%; /* límite en pantallas grandes */
 }
 
 .busqueda i {
   position: absolute;
-  left: 10px;
+  left: 0.625rem; 
   color: #555;
 }
 
 .busqueda input {
   padding: 0.5rem 0.5rem 0.5rem 2rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   width: 100%;
-  min-width: 200px;
+  min-width:  40%;
 }
 
 /* Carrito */
 .carrito {
   position: relative;
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-left: 8rem;
 }
 
 .carrito .contador {
   position: absolute;
-  top: -8px;
-  right: -12px;
+  top: -0.5rem; 
+  right: -0.75rem; 
   background: red;
   color: white;
-  font-size: 12px;
-  padding: 2px 6px;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.375rem;
   border-radius: 50%;
 }
 

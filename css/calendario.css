@@ -81,30 +81,6 @@ h1 {
   max-width: 90%;
 }
 
-footer {
-  background: #222;
-  color: white;
-  padding: 2rem;
-}
-
-.contenedor-footer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-}
-
-.columna h3 {
-  margin-bottom: 1rem;
-}
-
-.columna ul {
-  list-style: none;
-}
-
-.columna a {
-  color: #aaa;
-  text-decoration: none;
-}
 
 /* Tablet: 4 columnas */
 @media (max-width: 900px) {
