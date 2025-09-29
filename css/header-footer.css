@@ -50,7 +50,7 @@ header {
 .carrito {
   position: relative;
   font-size: 24px;
-  margin-left: 16rem;
+  margin-left: 8rem;
 }
 
 .carrito .contador {
@@ -65,6 +65,11 @@ header {
 }
 
 /* Menú */
+
+nav {
+  margin-right: 5rem;
+}
+
 nav ul {
   display: flex;
   flex-wrap: wrap; /* si no entra en una fila, baja */
@@ -141,3 +146,5 @@ footer {
     gap: 0.5rem;
   }
 }
+
+
