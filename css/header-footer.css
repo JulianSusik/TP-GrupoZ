@@ -10,12 +10,12 @@ header {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 1em;
 }
 
 .logo img {
   max-width: 120px;
   height: auto;
-  margin-left: 1rem;
 }
 
 /* Buscador */
@@ -28,6 +28,8 @@ header {
   position: relative;
   display: flex;
   align-items: center;
+    flex: 1; /* ocupa espacio flexible */
+  max-width: 500px; /* límite en pantallas grandes */
 }
 
 .busqueda i {
@@ -40,7 +42,8 @@ header {
   padding: 0.5rem 0.5rem 0.5rem 2rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 35em;
+  width: 100%;
+  min-width: 200px;
 }
 
 /* Carrito */
@@ -64,9 +67,10 @@ header {
 /* Menú */
 nav ul {
   display: flex;
+  flex-wrap: wrap; /* si no entra en una fila, baja */
   list-style: none;
   gap: 1rem;
-  width: 25em;
+  padding: 0;
 }
 
 nav a {
@@ -105,37 +109,35 @@ footer {
   text-decoration: none;
 }
 
-/* --------- medias queris --------- */
-
-/* Tablets */
+/* --------- MEDIA QUERIES --------- */
 @media (max-width: 768px) {
-  .contenedor-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+  .busqueda {
+    order: 3; 
+    width: 100%;
   }
 
   nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .carrito {
+    margin-left: 0;
   }
 }
 
-/* Celulares */
 @media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-
   .logo img {
     max-width: 90px;
   }
 
-  .cursos-destacados {
-    grid-template-columns: 1fr;
+  .busqueda input {
+    min-width: 150px;
   }
 
-  .medios-de-pago img {
-    max-width: 60px;
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   }
 }

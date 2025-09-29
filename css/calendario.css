@@ -106,4 +106,16 @@ footer {
   text-decoration: none;
 }
 
+/* Tablet: 4 columnas */
+@media (max-width: 900px) {
+  .ol {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
+/* Celular: 2 columnas */
+@media (max-width: 600px) {
+  .ol {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
