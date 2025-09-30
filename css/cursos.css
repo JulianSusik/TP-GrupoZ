@@ -11,15 +11,28 @@
   margin-top: 2%;
 }
 
-.foto-curso {
-  width: 250px;
+
+.foto-curso-css,
+.foto-curso-html,
+.foto-curso-js,
+.foto-curso-db {
+  width: 290px;
   height: 250px;
-  background: #ddd;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
   border-radius: 8px;
+  overflow: hidden; 
+}
+
+.foto-curso-css img,
+.foto-curso-html img,
+.foto-curso-js img,
+.foto-curso-db img {
+  width: 125%;
+  height: 150%;
+  object-fit: contain;
+  object-position: right center;
 }
 
 .btn-inscribirse {
@@ -114,7 +127,10 @@
     text-align: center;
   }
 
-  .foto-curso {
+  .foto-curso-css,
+  .foto-curso-html,
+  .foto-curso-js,
+  .foto-curso-db { 
     width: 200px;
     height: 200px;
   }
