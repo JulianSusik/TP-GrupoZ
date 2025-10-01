@@ -37,14 +37,14 @@ h1 {
   padding: 2em;
 }
 
-.ol {
+ol {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: 4em repeat(5, 1fr); 
+  grid-template-columns: repeat(7, minmax(0, 1fr)); /* siempre 7 columnas */
+  grid-template-rows: 4em repeat(5, 1fr);
   width: 100%;
-  height: 100%;
   border: 2px solid #ccc;
+  overflow-x: hidden; 
 }
 
 .day {
@@ -82,18 +82,22 @@ h1 {
 }
 
 
-
 @media (max-width: 900px) {
-  .ol {
-  grid-template-columns: repeat(7, minmax(80px, 1fr));
+  .day {
+    font-size: 1em;
+  }
+  .days {
+    font-size: 0.9em;
+    padding: 0.3em;
+  }
 }
-
-}
-
 
 @media (max-width: 600px) {
-  .ol {
-  grid-template-columns: repeat(7, minmax(80px, 1fr));
-}
-
+  .day {
+    font-size: 0.8em;
+  }
+  .days {
+    font-size: 0.75em;
+    padding: 0.2em;
+  }
 }
