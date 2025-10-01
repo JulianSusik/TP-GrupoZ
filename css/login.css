@@ -22,6 +22,11 @@ body {
   padding: 1rem;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 /* Títulos */
 .title {
   font-size: 1.8rem;
