@@ -90,16 +90,16 @@ button:hover {
 }
 
 .mapa-box {
-  position: relative; /* contenedor relativo */
+  position: relative; 
   width: 100%;
-  padding-top: 40%; /* 16:9 → (9/16)*100 = 56.25% */
+  padding-top: 40%; 
   border: 1px solid #aaa;
   border-radius: 8px;
   overflow: hidden;
 }
 
 .mapa-box iframe {
-  position: absolute; /* ocupa todo el contenedor */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
