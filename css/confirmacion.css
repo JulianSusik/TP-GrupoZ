@@ -8,7 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* altura mínima de toda la ventana */
+   
     margin: 0;
     font-family: Arial, sans-serif;
 }
