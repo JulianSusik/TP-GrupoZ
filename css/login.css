@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +15,7 @@ body {
   align-items: center;
 }
 
-/* Contenedor principal */
+
 .container {
   width: 100%;
   max-width: 400px;
@@ -27,7 +27,7 @@ a {
   color: white;
 }
 
-/* Títulos */
+
 .title {
   font-size: 1.8rem;
   color: black;
@@ -35,7 +35,7 @@ a {
   margin-bottom: 1rem;
 }
 
-/* Formulario */
+
 .login-form {
   background: #fff;
   padding: 2rem;
@@ -55,7 +55,7 @@ legend {
   margin-bottom: 1rem;
 }
 
-/* Campos */
+
 .campo {
   display: flex;
   flex-direction: column;
@@ -81,7 +81,6 @@ legend {
   outline: none;
 }
 
-/* Botón */
 .btn {
   width: 100%;
   padding: 0.8rem;
@@ -99,7 +98,7 @@ legend {
   background: #343b49;
 }
 
-/* Links */
+
 .links {
   text-align: center;
   margin-top: 1rem;
@@ -115,9 +114,9 @@ legend {
   text-decoration: underline;
 }
 
-/* --------- Responsividad --------- */
 
-/* Tablet */
+
+
 @media (max-width: 768px) {
   .login-form {
     padding: 1.5rem;
@@ -127,7 +126,7 @@ legend {
   }
 }
 
-/* Celular */
+
 @media (max-width: 480px) {
   .login-form {
     padding: 1rem;
@@ -140,3 +139,4 @@ legend {
     font-size: 0.9rem;
   }
 }
+
