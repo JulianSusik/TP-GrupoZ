@@ -17,10 +17,10 @@ body {
   line-height: 1.6;
 }
 
-/* -------- Formulario -------- */
+
 
 .contenedor {
-  max-width: 90%; /* antes 1100px fijo */
+  max-width: 90%; 
   margin: 1rem auto;
 }
 
@@ -30,10 +30,10 @@ body {
   gap: 0.625rem;
 }
 
-/* Cada fila: grid para alinear campos y botón */
+
 .fila {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto; /* 3 campos + botón */
+  grid-template-columns: 1fr 1fr 1fr auto; 
   gap: 3rem;
   align-items: center;
   background: var(--bg);
@@ -42,7 +42,7 @@ body {
   border-radius: 0.75rem;
 }
 
-/* Campo (label arriba, input abajo) */
+
 .campo {
   display: flex;
   flex-direction: column;
@@ -64,7 +64,7 @@ body {
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 
-/* Botón con ícono “menos” */
+
 .btn-borrar {
    height: 2rem;
   width: 2rem;
@@ -90,7 +90,7 @@ body {
   fill: #0f1011;
 }
 
-/* Monto y boton envio */
+
 .contenedor-inscp {
   display: flex;
   flex-direction: row;
@@ -129,23 +129,23 @@ button svg {
 /* Form Responsivo */
 @media (max-width: 920px) {
   .fila {
-    grid-template-columns: 1fr 1fr; /* 2 columnas + botón baja */
+    grid-template-columns: 1fr 1fr; 
   }
   .btn-borrar {
-    grid-column: 2 / 3; /* al final de la fila en 2 col */
+    grid-column: 2 / 3;
     justify-self: end;
   }
 }
 @media (max-width: 560px) {
   .fila {
-    grid-template-columns: 1fr; /* 1 columna: todo apilado */
+    grid-template-columns: 1fr; 
   }
   .btn-borrar {
     width: 100%;
   }
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .footer-inner {
     grid-template-columns: 1fr;
