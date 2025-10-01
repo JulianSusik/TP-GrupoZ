@@ -85,26 +85,15 @@ h1 {
 
 @media (max-width: 900px) {
   .ol {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .day {
-    font-size: 1em;
-  }
-  .days {
-    font-size: 0.9em;
-  }
+  grid-template-columns: repeat(7, minmax(80px, 1fr));
+}
+
 }
 
 
 @media (max-width: 600px) {
   .ol {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .day {
-    font-size: 0.9em;
-  }
-  .days {
-    font-size: 0.8em;
-  }
+  grid-template-columns: repeat(7, minmax(80px, 1fr));
 }
 
+}
