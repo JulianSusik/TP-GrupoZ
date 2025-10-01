@@ -1,4 +1,4 @@
-/* --------- Header --------- */
+
 header {
   background-color: grey;
   color: white;
@@ -28,8 +28,8 @@ header {
   position: relative;
   display: flex;
   align-items: center;
-    flex: 1; /* ocupa espacio flexible */
-  max-width: 80%; /* límite en pantallas grandes */
+    flex: 1; 
+  max-width: 80%; 
 }
 
 .busqueda i {
@@ -46,7 +46,7 @@ header {
   min-width:  40%;
 }
 
-/* Carrito */
+
 .carrito {
   position: relative;
   font-size: 1.5rem;
@@ -64,7 +64,7 @@ header {
   border-radius: 50%;
 }
 
-/* Menú */
+
 
 nav {
   margin-right: 5rem;
@@ -72,7 +72,7 @@ nav {
 
 nav ul {
   display: flex;
-  flex-wrap: wrap; /* si no entra en una fila, baja */
+  flex-wrap: wrap; 
   list-style: none;
   gap: 1rem;
   padding: 0;
@@ -83,12 +83,12 @@ nav a {
   text-decoration: none;
 }
 
-/* agrega espacio arriba de cada sección */
+
 section {
   margin-top: 3rem;
 }
 
-/* --------- Footer --------- */
+
 footer {
   background: #222;
   color: white;
@@ -114,7 +114,7 @@ footer {
   text-decoration: none;
 }
 
-/* --------- MEDIA QUERIES --------- */
+
 @media (max-width: 768px) {
   .busqueda {
     order: 3; 
@@ -146,5 +146,6 @@ footer {
     gap: 0.5rem;
   }
 }
+
 
 
