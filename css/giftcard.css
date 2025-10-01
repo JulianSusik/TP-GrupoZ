@@ -21,7 +21,7 @@ body {
 
 
 
-/* ====== Layout ====== */
+
 .layout{
   display:grid;
   grid-template-columns: 5fr 800px;
@@ -38,26 +38,26 @@ body {
   }
 }
 
-/* ====== Preview ====== */
+
 .preview-area{
   background:transparent;
 }
 
 .card{
   position:relative;
-  aspect-ratio:1/1;                /* cuadrada, se adapta al ancho disponible */
+  aspect-ratio:1/1;              
   width:min(420px, 100%);
   border-radius:10px;
   border:1px solid var(--border);
   overflow:hidden;
-  background:#bdbdbd;              /* default (solid) */
+  background:#bdbdbd;             
   display:flex;
   align-items:center;
   justify-content:center;
   margin-bottom:10px;
 }
 
-/* Fondos alternativos */
+
 .card.bg-gradient{
   background: linear-gradient(135deg,#7c4dff 0%, #00bcd4 100%);
 }
@@ -70,7 +70,7 @@ body {
   background:url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
 }
 
-/* Contenido */
+
 .card-inner{
   text-align:center;
   color:#111;
@@ -90,7 +90,7 @@ body {
   text-wrap:balance;
 }
 
-/* Monto (badge) */
+
 .amount-badge{
   position:absolute;
   padding:10px 14px;
@@ -100,7 +100,7 @@ body {
   font-weight:700;
   font-size:14px;
 }
-/* Posiciones posibles */
+
 .card[data-pos="tl"] .amount-badge{ top:10px; left:10px; }
 .card[data-pos="tc"] .amount-badge{ top:10px; left:50%; transform:translateX(-50%); }
 .card[data-pos="tr"] .amount-badge{ top:10px; right:10px; }
@@ -108,7 +108,7 @@ body {
 .card[data-pos="bc"] .amount-badge{ bottom:10px; left:50%; transform:translateX(-50%); }
 .card[data-pos="br"] .amount-badge{ bottom:10px; right:10px; }
 
-/* Leyenda */
+
 .preview-caption{
   position:absolute;
   bottom:10px; left:50%;
@@ -119,8 +119,8 @@ body {
   opacity:.7;
 }
 
-/* ====== Panel de controles ====== */
- /* titulo */
+
+
  .page-header{
   padding:auto;
 }
@@ -174,7 +174,7 @@ body {
   box-shadow:0 0 0 3px color-mix(in srgb, var(--brand) 20%, transparent);
 }
 
-/* Cambio de color */
+
 .swatches{
   display:flex; flex-wrap:wrap; gap:10px;
 }
@@ -192,7 +192,7 @@ body {
   box-shadow:0 0 0 2px var(--brand);
 }
 
-/* Tamaños */
+
 .sizes{ display:flex; gap:12px; flex-wrap:wrap; }
 .sizes label{
   display:inline-flex; gap:6px; align-items:center;
@@ -227,7 +227,7 @@ body {
 
 .sizes input{ accent-color:var(--brand); }
 
-/* Posición del monto */
+
 .pos-grid{
   display:grid;
   grid-template-columns: repeat(3, 36px);
@@ -248,7 +248,7 @@ body {
   width:8px; height:8px; border-radius:2px; background:#111;
   position:absolute;
 }
-/* dibuja el “punto” según data-pos */
+
 .pos span[data-pos="tl"]::before{ top:6px; left:6px; }
 .pos span[data-pos="tc"]::before{ top:6px; left:50%; transform:translateX(-50%); }
 .pos span[data-pos="tr"]::before{ top:6px; right:6px; }
@@ -260,7 +260,7 @@ body {
   box-shadow:0 0 0 2px var(--brand);
 }
 
-/* Fondos */
+
 .bg-list{ display:flex; gap:10px; flex-wrap:wrap; }
 .bg input{ position:absolute; opacity:0; }
 .bg-chip{
@@ -287,7 +287,7 @@ body {
   background:url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=240&auto=format&fit=crop') center/cover no-repeat;
 }
 
-/* Botón */
+
 .btn{
   width: 30%;
   height:44px;
