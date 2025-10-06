@@ -94,7 +94,7 @@ body {
 .contenedor-inscp {
   display: flex;
   flex-direction: row;
-  margin: 5%, 0%, 5%, 5%;
+  margin: 5% 0% 5% 5%;
 }
 
 .monto {
