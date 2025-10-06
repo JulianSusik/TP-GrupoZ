@@ -125,8 +125,15 @@ input:focus {
   background-color: #343b49;
 }
 
+/* nueva */
+.btn-guardar {
+  font-size: 1rem;
+}
+
 .btn-cancelar {
   background-color: #aaa;
+  /* nueva */
+  text-decoration: none;
 }
 
 .btn-cancelar:hover {
@@ -136,6 +143,8 @@ input:focus {
 .btn-cerrar {
   background-color: #B5341B;
   color: black;
+  /* nueva */
+  text-decoration: none;
 }
 
 /* RESPONSIVE */
@@ -152,3 +161,4 @@ input:focus {
     width: 100%;
   }
 }
+
