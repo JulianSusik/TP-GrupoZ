@@ -80,6 +80,13 @@ ol {
   max-width: 90%;
 }
 
+.evento a {
+  color: white;           /* color del texto */
+  text-decoration: none;  /* elimina el subrayado */
+  font-weight: bold;      /* opcional: lo hace más legible */
+}
+
+
 
 @media (max-width: 900px) {
   .day {
