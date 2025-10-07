@@ -1,3 +1,30 @@
+.info-banner-html,
+.info-banner-js {
+  background-color: #fff7e6; 
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-top: 3%;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.info-banner-html {
+   border-left: 4px solid #e63c22; 
+}
+
+.info-banner-js {
+   border-left: 4px solid #ffca28; 
+}
+
+.info-banner-html strong {
+  color: #e63c22; 
+}
+
+.info-banner-js strong {
+  color: #ffca28; 
+}
 
 .info-curso {
   display: flex;
