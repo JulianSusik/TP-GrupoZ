@@ -17,6 +17,10 @@ header {
   max-width: 120%;
   height: auto;
 }
+select {
+  width: 35em;
+  height: 2em;
+}
 
 /* Buscador */
 /* .busqueda input {
@@ -146,6 +150,7 @@ footer {
     gap: 0.5rem;
   }
 }
+
 
 
 
