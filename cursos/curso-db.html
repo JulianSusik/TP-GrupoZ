@@ -14,16 +14,15 @@
         <div class="logo">
           <a href="../html/home.html"><img src="../img/logo.png" alt="Logo del sitio" /></a>
         </div>
-        <div class="busqueda">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input list="cursos" placeholder="Buscar cursos..." />
-          <datalist id="cursos">
-            <option value="HTML Básico" />
-            <option value="CSS Avanzado" />
-            <option value="JavaScript Inicial" />
-            <option value="Base de Datos" />
-          </datalist>
-        </div>
+       <form action="">
+          <select onchange="location = this.value;">
+            <option value="">Buscar cursos...</option>
+            <option value="../cursos/curso-html.html">HTML Básico</option>
+            <option value="../cursos/curso-css.html">CSS Avanzado</option>
+            <option value="../cursos/curso-js.html">JavaScript Inicial</option>
+            <option value="../cursos/curso-db.html">Base de Datos</option>
+          </select>
+        </form>
         <div class="carrito">
           <img src="../img/carrito-de-compras.png" alt="Carrito del sitio" />
           <span class="contador">3</span>
