@@ -129,6 +129,23 @@ h2 {
   cursor: pointer;
 }
 
+.seccion-destacados {
+  background-color: #f4f6f9; 
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  border: 1px solid #e1e4e8; 
+}
+
+.seccion-destacados .cursos-destacados article {
+  background-color: #ffffff; 
+  border: 1px solid #d1d5db;
+  border-top: 4px solid #818a9c; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+}
+
+
+
 /* Medios de pago */
 /* .medios-de-pago {
   display: flex;
