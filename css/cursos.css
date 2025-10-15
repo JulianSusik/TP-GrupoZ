@@ -42,7 +42,11 @@
 .foto-curso-css,
 .foto-curso-html,
 .foto-curso-js,
-.foto-curso-db {
+.foto-curso-db,
+.foto-curso-uiux,
+.foto-curso-react,
+.foto-curso-git,
+.foto-curso-py {
   width: 290px;
   height: 250px;
   display: flex;
@@ -55,7 +59,11 @@
 .foto-curso-css img,
 .foto-curso-html img,
 .foto-curso-js img,
-.foto-curso-db img {
+.foto-curso-db img,
+.foto-curso-uiux img,
+.foto-curso-react img,
+.foto-curso-git img,
+.foto-curso-py img {
   width: 125%;
   height: 150%;
   object-fit: contain;
