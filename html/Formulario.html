@@ -29,11 +29,11 @@
         </form>
 
         
+        
         <a href="../html/carrito.html" class="carrito">
           <img src="../img/carrito-de-compras.png" alt="Carrito del sitio" />
           <span class="contador">3</span>
         </a>
-
        
         <nav>
           <ul>
@@ -59,15 +59,15 @@
       <div class="fila" data-row="1">
         <div class="campo">
           <label for="nombre-1">Nombre</label>
-          <input id="nombre-1" name="nombre[]" type="text" />
+          <input id="nombre-1" name="nombre[]" type="text" value="Juan" readonly/>
         </div>
         <div class="campo">
           <label for="apellido-1">Apellido</label>
-          <input id="apellido-1" name="apellido[]" type="text" />
+          <input id="apellido-1" name="apellido[]" type="text" value="Perez" readonly/>
         </div>
         <div class="campo">
           <label for="documento-1">Documento</label>
-          <input id="documento-1" name="documento[]" type="text" inputmode="numeric" />
+          <input id="documento-1" name="documento[]" type="text" inputmode="numeric" value="23594588" readonly/>
         </div>
 
         <button class="btn-borrar" type="button" aria-label="Borrar campos de la fila 1">
@@ -82,15 +82,15 @@
       <div class="fila" data-row="2">
         <div class="campo">
           <label for="nombre-2">Nombre</label>
-          <input id="nombre-2" name="nombre[]" type="text" />
+          <input id="nombre-2" name="nombre[]" type="text" value="Oscar" readonly/>
         </div>
         <div class="campo">
           <label for="apellido-2">Apellido</label>
-          <input id="apellido-2" name="apellido[]" type="text" />
+          <input id="apellido-2" name="apellido[]" type="text" value="Torres" readonly/>
         </div>
         <div class="campo">
           <label for="documento-2">Documento</label>
-          <input id="documento-2" name="documento[]" type="text" inputmode="numeric" />
+          <input id="documento-2" name="documento[]" type="text" inputmode="numeric" value="42598456" readonly />
         </div>
 
         <button class="btn-borrar" type="button" aria-label="Borrar campos de la fila 2">
@@ -104,15 +104,15 @@
       <div class="fila" data-row="3">
         <div class="campo">
           <label for="nombre-3">Nombre</label>
-          <input id="nombre-3" name="nombre[]" type="text" />
+          <input id="nombre-3" name="nombre[]" type="text" value="Lucia" readonly/>
         </div>
         <div class="campo">
           <label for="apellido-3">Apellido</label>
-          <input id="apellido-3" name="apellido[]" type="text" />
+          <input id="apellido-3" name="apellido[]" type="text" value="Fernandez" readonly />
         </div>
         <div class="campo">
           <label for="documento-3">Documento</label>
-          <input id="documento-3" name="documento[]" type="text" inputmode="numeric" />
+          <input id="documento-3" name="documento[]" type="text" inputmode="numeric" value="38795567"/>
         </div>
 
         <button class="btn-borrar" type="button" aria-label="Borrar campos de la fila 3">
@@ -123,11 +123,11 @@
       </div>
     
     <div class="contenedor-inscp">  
-      <span class="monto"> $000.-</span>
+      <!-- <span class="monto"> $000.-</span> -->
 
-      <button>
-        INSCRIBIRSE
-      </button>
+      <a class="btn-agregar" href="carrito.html">
+        AGREGAR CURSO
+      </a>
 
     </div>
 
