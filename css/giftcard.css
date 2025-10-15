@@ -301,3 +301,19 @@ body {
 }
 .btn:hover{ box-shadow:0 2px 10px rgba(216, 10, 10, 0.06); }
 .btn:active{ transform:translateY(1px); }
+
+/* estilo agregado */
+.btn-agregar {
+  display: block;
+  width: 200px; /* podés ajustar el ancho */
+  text-align: center; /* centra el texto dentro del botón */
+  margin: 20px auto; /* esto lo centra horizontalmente */
+  background-color: #43484e;
+  color: white;
+  padding: 12px 0;
+  font-size: 1.1em;
+  border-radius: 10px;
+  text-decoration: none; /* quita el subrayado */
+  transition: background-color 0.3s ease;
+}
+
