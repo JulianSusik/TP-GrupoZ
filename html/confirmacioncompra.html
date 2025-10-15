@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/calendario.css" />
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="../css/confirmacion.css" />
     <link rel="stylesheet" href="../css/header-footer.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Calendario</title>
-
+    <title>Contacto</title>
   </head>
+  
   <body>
     <header>
       <div class="contenedor-header">
@@ -18,7 +19,7 @@
           /></a>
         </div>
 
-          <form action="">
+        <form action="">
           <select onchange="location = this.value;">
             <option value="">Buscar cursos...</option>
             <option value="../cursos/curso-html.html">HTML Básico</option>
@@ -28,8 +29,7 @@
           </select>
         </form>
 
-        
-        <a href="../html/carrito.html" class="carrito">
+          <a href="../html/carrito.html" class="carrito">
           <img src="../img/carrito-de-compras.png" alt="Carrito del sitio" />
           <span class="contador">3</span>
         </a>
@@ -41,69 +41,20 @@
             <li><a href="contacto.html">Contacto</a></li>
             <li><a href="giftcard.html">Giftcard</a></li>
             <li><a href="formulario.html">Inscripción</a></li>
-            <li><a href="perfil.html">Perfil</a></li>
           </ul>
         </nav>
       </div>
     </header>
-    <h1>Calendario</h1>
-    <div class="container">
-      <ol class="ol">
-        <li class="day">Lun</li>
-        <li class="day">Mar</li>
-        <li class="day">Mie</li>
-        <li class="day">Jue</li>
-        <li class="day">Vie</li>
-        <li class="day">Sab</li>
-        <li class="day">Dom</li>
-
-        <li class="days pasado">1 de oct</li>
-        <li class="days pasado">2</li>
-        <li class="days pasado">3</li>
-        <li class="days pasado">4</li>
-        <li class="days pasado">5</li>
-        <li class="days pasado">6</li>
-        <li class="days pasado">7</li>
-        <li class="days pasado">8</li>
-        <li class="days pasado">9</li>
-        <li class="days pasado">10</li>
-        <li class="days pasado">11</li>
-        <li class="days pasado">12</li>
-        <li class="days hoy">13</li>
-        <li class="days">14</li>
-        <li class="days">
-          15
-          <div class="evento"><a href="../cursos/curso-html.html">Nuevo curso de HTML</a></div>
-        </li>
-        <li class="days">16</li>
-        <li class="days">17</li>
-        <li class="days">18</li>
-        <li class="days">19</li>
-        <li class="days">20</li>
-        <li class="days">21</li>
-        <li class="days">22</li>
-        <li class="days">23</li>
-        <li class="days">24</li>
-        <li class="days">25</li>
-        <li class="days">
-          26
-          <div class="evento"><a href="../cursos/curso-js.html">Nuevo curso de JavaScript</a></div>
-        </li>
-        <li class="days">27</li>
-        <li class="days">28</li>
-        <li class="days">29</li>
-        <li class="days">30</li>
-        <li class="days">31</li>
-        <li class="days">1 de nov</li>
-        <li class="days">2</li>
-        <li class="days">3</li>
-        <li class="days">4</li>
-      </ol>
+   
+  <main>
+    <div class="mensaje-exito">
+      ¡La compra se realizo correctamente!
     </div>
-
+    <a href="contacto.html" class="boton-volver">Volver al inicio</a>
+  </main>
     <footer>
       <div class="contenedor-footer">
-        
+     
         <div class="columna">
           <h3>Integrantes</h3>
           <ul>
@@ -115,7 +66,7 @@
           </ul>
         </div>
 
-      
+     
         <div class="columna">
           <h3>Menú</h3>
           <ul>
@@ -125,7 +76,7 @@
           </ul>
         </div>
 
-       
+    
         <div class="columna">
           <h3>Síguenos</h3>
           <ul>

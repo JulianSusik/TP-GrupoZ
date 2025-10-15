@@ -86,7 +86,17 @@ ol {
   font-weight: bold;      /* opcional: lo hace más legible */
 }
 
+.pasado {
+  background-color: #ddd;
+  color: #666;
+}
 
+.hoy {
+  background-color: #c9a66b;
+  color: white;
+  font-weight: bold;
+  border: 2px solid #a57e3d;
+}
 
 @media (max-width: 900px) {
   .day {

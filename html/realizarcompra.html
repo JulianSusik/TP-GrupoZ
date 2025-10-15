@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrito de Compras</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/realizarcompra.css">
     <link rel="stylesheet" href="../css/header-footer.css" />
-    <link rel="stylesheet" href="../css/home.css" />
-    <link rel="stylesheet" href="../css/carrito.css" />
-    <style></style>
-  </head>
-
-  <body>
+    <title>Document</title>
+</head>
+<body>
     <header>
       <div class="contenedor-header">
         <div class="logo">
@@ -45,45 +42,72 @@
       </div>
     </header>
 
-    <main>
-      <h1>Resumen de tu compra</h1>
+    <main class="metodo-container">
+    <form class="form-section" action="./confirmacioncompra.html">
+    <h2>Método de pago</h2>
 
-      <table>
-        <tr>
-          <th>Producto</th>
-          <th>Cantidad</th>
-          <th>Precio</th>
-        </tr>
-        <tr>
-          <td>Curso HTML Básico</td>
-          <td>1</td>
-          <td>$50</td>
-        </tr>
-        <tr>
-          <td>JavaScript Inicial</td>
-          <td>1</td>
-          <td>$120</td>
-        </tr>
-        <tr>
-          <td>Giftcard</td>
-          <td>1</td>
-          <td>$30</td>
-        </tr>
-        <tr>
-          <td colspan="2" class="total">Total:</td>
-          <td><strong>$200</strong></td>
-        </tr>
-      </table>
 
-      <div class="metodos-pago">
-        <h3>Métodos de pago disponibles</h3>
-        <img src="../img/visa.png" alt="Visa" />
-        <img src="../img/mastercard.png" alt="Mastercard" />
-        <img src="../img/paypal.png" alt="PayPal" />
+    <label class="opcion">
+      <input type="radio" id="tarjeta" name="metodoPago" value="tarjeta" required>
+      Tarjeta de crédito
+    </label>
+
+    <div class="datos-tarjeta">
+      <div class="campo">
+        <input type="text" id="numeroTarjeta" name="numeroTarjeta" placeholder="Número de tarjeta" maxlength="16" required>
       </div>
 
-      <a href="../html/realizarcompra.html" class="btn-comprar">Realizar compra</a>
-    </main>
+      <div class="campo">
+        <input type="text" id="codTarjeta" name="codTarjeta" placeholder="Código (XXX)" maxlength="3" required>
+      </div>
+    </div>
+
+ 
+    <label class="opcion">
+      <input type="radio" id="cupon" name="metodoPago" value="cupon">
+      Cupón de pago
+    </label>
+
+    <div class="cupon-opciones">
+      <label class="sub-opcion">
+        <input type="checkbox" name="tipoCupon" value="pago-facil" > Pago Fácil
+      </label>
+      <label class="sub-opcion">
+        <input type="checkbox" name="tipoCupon" value="rapi-pago"> RapiPago
+      </label>
+    </div>
+
+  
+    <label class="opcion">
+      <input type="radio" id="transferencia" name="metodoPago" value="transferencia">
+      Transferencia bancaria
+    </label>
+
+    <div class="transferencia">
+      <label for="cbu">CBU:</label>
+      <input type="text" id="cbu" name="cbu" >
+    </div>
+
+
+    <div class="botones">
+      <button type="submit" class="btn-confirmar">Confirmar</button>
+      <a class="btn-cancelar" href="../index.html">Cancelar</a>
+    </div>
+  </form>
+
+  </section>
+
+
+  <div class="metodos">
+    <h3>Métodos de pago disponibles</h3>
+    <img src="../img/visa.png" alt="Visa">
+    <img src="../img/mastercard.png" alt="Mastercard">
+    <img src="../img/paypal.png" alt="PayPal">
+  </div>
+
+ 
+</main>
+
 
     <footer>
       <footer>

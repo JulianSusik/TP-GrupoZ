@@ -1,0 +1,162 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.5;
+}
+
+
+.metodo-container {
+  max-width: 75rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
+.form-section {
+  border: 1px solid #aaa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+
+.opcion {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+}
+
+.opcion input[type="radio"] {
+  accent-color: #c9a66b;
+}
+
+
+.datos-tarjeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-left: 1.5rem;
+}
+
+.campo input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+
+.cupon-opciones {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  gap: 0.4rem;
+}
+
+.sub-opcion input[type="checkbox"] {
+  accent-color: #c9a66b;
+}
+
+.transferencia {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1.5rem;
+}
+
+.transferencia input {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 0.4rem;
+  background-color: #f5f5f5;
+  color: #555;
+}
+
+
+.botones {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-confirmar,
+.btn-cancelar {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #c9a66b;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-confirmar:hover {
+  background-color: #a57e3d;
+}
+
+.btn-cancelar {
+  background-color: #881414;
+  color: #fdfdfd;
+}
+
+.btn-cancelar:hover {
+  background-color: #ddd;
+}
+
+
+.metodos {
+  text-align: center;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.metodos h3 {
+  margin-bottom: 1rem;
+}
+
+.metodos img {
+  width: 60px;
+  margin: 0 0.5rem;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .datos-tarjeta {
+    flex-direction: column;
+    margin-left: 1rem;
+  }
+
+  .transferencia {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .metodo-container {
+    padding: 0.5rem;
+  }
+}
