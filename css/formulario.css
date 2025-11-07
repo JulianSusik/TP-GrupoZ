@@ -17,6 +17,83 @@ body {
   line-height: 1.6;
 }
 
+/* ====== Estilos para los radio buttons Persona / Empresa ====== */
+.tipo-inscripcion {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 10px 0 20px 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.tipo-inscripcion label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Ocultar el radio nativo */
+.tipo-inscripcion input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #888;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto al pasar el mouse */
+.tipo-inscripcion input[type="radio"]:hover {
+  border-color: #0078d7;
+}
+
+/* Círculo interno cuando está seleccionado */
+.tipo-inscripcion input[type="radio"]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #0078d7;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+.tipo-inscripcion input[type="radio"]:checked::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Botón Agregar empleado */
+.acciones-dinamicas {
+  margin: 8px 0 6px;
+  display: flex;
+  justify-content: flex-start;
+}
+.btn-agregar-empleado {
+  padding: 10px 14px;
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  background: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .15s;
+}
+.btn-agregar-empleado:hover { box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+.btn-agregar-empleado:active { transform: translateY(1px); }
+
+
+
 .contenedor {
   max-width: 90%;
   margin: 1rem auto;
@@ -85,11 +162,6 @@ body {
   fill: #0f1011;
 }
 
-.contenedor-inscp {
-  display: flex;
-  flex-direction: row;
-  margin: 5% 10% 5% 5%;
-}
 
 .monto {
   font-size: 1.8rem;
@@ -100,8 +172,110 @@ body {
   border-radius: 4px;
 }
 
+/* ====== ESTILOS DEL DIALOG ====== */
+dialog {
+  position: fixed;          /* se fija respecto a la ventana */
+  top: 50%;                 /* centro vertical */
+  left: 50%;                /* centro horizontal */
+  transform: translate(-50%, -50%); /* lo lleva al centro exacto */
+  border: none;
+  border-radius: 14px;
+  padding: 0;
+  width: min(420px, 90vw);
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  animation: fadeIn 0.2s ease-out;
+  z-index: 1000;            /* asegúrate de que quede por encima */
+}
+
+/* Fondo semitransparente detrás del modal */
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Contenedor interno */
+.dlg-inner {
+  padding: 20px 24px 16px;
+}
+
+.dlg-inner h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* Cuerpo del modal */
+.dlg-body {
+  min-height: 80px; /* espacio para mensajes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 15px;
+  padding: 10px 0;
+}
+
+/* Botones */
+.dlg-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.btn-green,
+.btn-red {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-green {
+  background-color: #28a745;
+}
+.btn-green:hover {
+  background-color: #218838;
+}
+
+.btn-red {
+  background-color: #dc3545;
+}
+.btn-red:hover {
+  background-color: #c82333;
+}
+
+.btn-green:active,
+.btn-red:active {
+  transform: scale(0.97);
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to   { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* ===== ERRORES EN CAMPOS ===== */
+.input-error {
+  border-color: #d93025 !important;
+  box-shadow: 0 0 0 3px rgba(217,48,37,.15) !important;
+}
+.error-li { 
+  margin: 4px 0; 
+  list-style-type: none;
+}
+
+
 /* estilo agregado */
-.btn-agregar {
+
+#openModalBtn {
   display: block;
   width: 200px; /* podés ajustar el ancho */
   text-align: center; /* centra el texto dentro del botón */
@@ -115,13 +289,6 @@ body {
   transition: background-color 0.3s ease;
 }
 
-button {
-  margin-left: 2%;
-  color: white;
-  background-color: black;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-}
 
 button:hover {
   box-shadow: 0 5px 8px rgba(112, 28, 190, 0.425);
@@ -135,7 +302,36 @@ button svg {
   fill: #37aa46;
 }
 
-/* Form Responsivo */
+/* Total */
+.total-wrapper{
+  margin: 8px 0 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  background: #fff;
+  font-weight: 700;
+}
+.total-wrapper output{
+  font-variant-numeric: tabular-nums;
+}
+
+
+
+
+/* RESPONSIVE */
+
+/* CSS para Radio Buttons */
+@media (max-width: 480px) {
+  .tipo-inscripcion {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
 @media (max-width: 920px) {
   .fila {
     grid-template-columns: 1fr 1fr;
@@ -164,3 +360,16 @@ button svg {
   }
 }
 
+/* Responsivo básico  para boton empresa*/
+@media (max-width: 560px){
+  .acciones-dinamicas { justify-content: stretch; }
+  .btn-agregar-empleado { width: 100%; }
+  .total-wrapper { width: 100%; justify-content: space-between; }
+}
+
+/* Dialog Responsive */
+@media (max-width: 500px){
+  .dlg-inner { padding: 16px; }
+  .dlg-actions { flex-direction: column; gap: 10px; }
+  .btn-green, .btn-red { width: 100%; }
+}

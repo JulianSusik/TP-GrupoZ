@@ -317,3 +317,104 @@ body {
   transition: background-color 0.3s ease;
 }
 
+
+/* ====== ESTILOS DEL DIALOG ====== */
+dialog {
+  position: fixed;          /* se fija respecto a la ventana */
+  top: 50%;                 /* centro vertical */
+  left: 50%;                /* centro horizontal */
+  transform: translate(-50%, -50%); /* lo lleva al centro exacto */
+  border: none;
+  border-radius: 14px;
+  padding: 0;
+  width: min(420px, 90vw);
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  animation: fadeIn 0.2s ease-out;
+  z-index: 1000;            /* asegúrate de que quede por encima */
+}
+
+/* Fondo semitransparente detrás del modal */
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Contenedor interno */
+.dlg-inner {
+  padding: 20px 24px 16px;
+}
+
+.dlg-inner h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* Cuerpo del modal */
+.dlg-body {
+  min-height: 80px; /* espacio para mensajes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 15px;
+  padding: 10px 0;
+}
+
+/* Botones */
+.dlg-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.btn-green,
+.btn-red {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-green {
+  background-color: #28a745;
+}
+.btn-green:hover {
+  background-color: #218838;
+}
+
+.btn-red {
+  background-color: #dc3545;
+}
+.btn-red:hover {
+  background-color: #c82333;
+}
+
+.btn-green:active,
+.btn-red:active {
+  transform: scale(0.97);
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to   { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* ===== ERRORES EN CAMPOS ===== */
+.input-error {
+  border-color: #d93025 !important;
+  box-shadow: 0 0 0 3px rgba(217,48,37,.15) !important;
+}
+.error-li { 
+  margin: 4px 0; 
+  list-style-type: none;
+}
+

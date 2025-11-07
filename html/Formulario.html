@@ -53,88 +53,96 @@
     <h3>TITULO CURSO</h3>
     <h5>INSCRIPCIÓN</h5>
 
-  <section class="contenedor">
-    <form class="tabla-form" id="tablaForm" autocomplete="off">
+  <!-- Selección de tipo de inscripción -->
+<div class="tipo-inscripcion">
+  <label>
+    <input type="radio" name="tipo" value="persona" checked>
+    Persona
+  </label>
+  <label>
+    <input type="radio" name="tipo" value="empresa">
+    Empresa
+  </label>
+</div>
 
+<section class="contenedor">
+  <form class="tabla-form" id="tablaForm" autocomplete="off">
+
+    <!-- ===== Empleados / Personas ===== -->
+    <div id="empleados">
+      <!-- Fila 1 (permanece, pero JS la limpia si es Persona) -->
       <div class="fila" data-row="1">
         <div class="campo">
           <label for="nombre-1">Nombre</label>
-          <input id="nombre-1" name="nombre[]" type="text" value="Juan" readonly/>
+          <input id="nombre-1" name="nombre[]" type="text" value="Juan"/>
         </div>
         <div class="campo">
           <label for="apellido-1">Apellido</label>
-          <input id="apellido-1" name="apellido[]" type="text" value="Perez" readonly/>
+          <input id="apellido-1" name="apellido[]" type="text" value="Perez"/>
         </div>
         <div class="campo">
           <label for="documento-1">Documento</label>
-          <input id="documento-1" name="documento[]" type="text" inputmode="numeric" value="23594588" readonly/>
+          <input id="documento-1" name="documento[]" type="text" inputmode="numeric" value="23594588"/>
         </div>
 
         <button class="btn-borrar" type="button" aria-label="Borrar campos de la fila 1">
-      
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 11h14v2H5z"></path>
           </svg>
         </button>
       </div>
 
-
-      <div class="fila" data-row="2">
-        <div class="campo">
-          <label for="nombre-2">Nombre</label>
-          <input id="nombre-2" name="nombre[]" type="text" value="Oscar" readonly/>
-        </div>
-        <div class="campo">
-          <label for="apellido-2">Apellido</label>
-          <input id="apellido-2" name="apellido[]" type="text" value="Torres" readonly/>
-        </div>
-        <div class="campo">
-          <label for="documento-2">Documento</label>
-          <input id="documento-2" name="documento[]" type="text" inputmode="numeric" value="42598456" readonly />
-        </div>
-
-        <button class="btn-borrar" type="button" aria-label="Borrar campos de la fila 2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 11h14v2H5z"></path>
-          </svg>
-        </button>
-      </div>
-
-     
-      <div class="fila" data-row="3">
-        <div class="campo">
-          <label for="nombre-3">Nombre</label>
-          <input id="nombre-3" name="nombre[]" type="text" value="Lucia" readonly/>
-        </div>
-        <div class="campo">
-          <label for="apellido-3">Apellido</label>
-          <input id="apellido-3" name="apellido[]" type="text" value="Fernandez" readonly />
-        </div>
-        <div class="campo">
-          <label for="documento-3">Documento</label>
-          <input id="documento-3" name="documento[]" type="text" inputmode="numeric" value="38795567"/>
-        </div>
-
-        <button class="btn-borrar" type="button" aria-label="Borrar campos de la fila 3">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 11h14v2H5z"></path>
-          </svg>
-        </button>
-      </div>
-    
-    <div class="contenedor-inscp">  
-      <!-- <span class="monto"> $000.-</span> -->
-
-      <a class="btn-agregar" href="carrito.html">
-        AGREGAR CURSO
-      </a>
-
+      <!-- (puedes dejar o quitar tus filas 2 y 3 originales, el JS también funciona;
+           si las dejas, las tratará como dinámicas) -->
     </div>
 
+    
+    <!-- Botón para Empresa -->
+      <div class="acciones-dinamicas">
+        <button type="button" class="btn-agregar-empleado" id="addEmployeeBtn">
+            + Agregar empleado </button>
+      </div>
+
+    <!-- Botón Confirmar -->
+      <button type="button" id="openModalBtn" > AGREGAR CURSO </button>
+</form>
+
+      <!-- Dialog de ERRORES (detalle de validaciones fallidas) -->
+        <dialog id="errorDlg">
+          <form method="dialog" class="dlg-inner">
+            <h3>Revisa los datos</h3>
+            <div class="dlg-body" id="errorMsg"></div>
+            <div class="dlg-actions">
+              <button class="btn-red" value="close">Entendido</button>
+            </div>
+          </form>
+        </dialog>
+ 
+       <!-- DIALOG DE CONFIRMACION -->
+        <dialog id="confirmDlg">
+          <form method="dialog" class="dlg-inner">
+            <h3>Confirmación</h3>
+            <div class="dlg-body" id="dlgMsg">
+              ¿Deseas enviar la inscripción?
+            </div>
+            <div class="dlg-actions">
+              <button value="cancel" class="btn-red">Cancelar</button>
+              <button id="confirmBtn" class="btn-green" onclick="window.location.href='carrito.html'">Confirmar</button> 
+            </div>
+          </form>
+        </dialog>
+ 
+       <!-- Total -->
+      <div class="total-wrapper" aria-live="polite">
+                <label>Total a pagar:</label>
+                <output id="total">$20</output>
+              </div>
+
   </section>
+
 </main>
 
-  
+
  <footer>
       <div class="contenedor-footer">
       
@@ -171,4 +179,6 @@
       </div>
     </footer>
 </body>
+
+<script src="../javascript/formulario.js"></script>
 </html>

@@ -67,8 +67,8 @@
           <h2 class="card-name" id="cardName">Destinatario</h2>
         </div>
 
-      
-        <p class="preview-caption">VISTA PREVIA DE RESULTADO DE PERSONALIZACIÓN</p>
+      <p class="preview-caption">VISTA PREVIA GIFTCARD</p>
+        
       </div>
     </section>
 
@@ -187,10 +187,36 @@
       </div>
 
       <div> 
-           <a href="../html/carrito.html" class="btn-agregar">
-          AGREGAR GIFCARD
-          </a>
+           <button  id="openModalBtn" class="btn-agregar">
+          AGREGAR GIFTCARD
+          </button>
       </div>
+
+        <!-- Dialog de ERRORES (detalle de validaciones fallidas) -->
+        <dialog id="errorDlg">
+          <form method="dialog" class="dlg-inner">
+            <h3>Revisa los datos</h3>
+            <div class="dlg-body" id="errorMsg"></div>
+            <div class="dlg-actions">
+              <button class="btn-red" value="close">Entendido</button>
+            </div>
+          </form>
+        </dialog>
+ 
+       <!-- DIALOG DE CONFIRMACION -->
+        <dialog id="confirmDlg">
+          <form method="dialog" class="dlg-inner">
+            <h3>Confirmación</h3>
+            <div class="dlg-body" id="dlgMsg">
+              ¿Deseas enviar la inscripción?
+            </div>
+            <div class="dlg-actions">
+              <button value="cancel" class="btn-red">Cancelar</button>
+              <button id="confirmBtn" class="btn-green" onclick="window.location.href='carrito.html'">Confirmar</button> 
+            </div>
+          </form>
+        </dialog>
+
     </section>
   </main>
 
@@ -232,4 +258,7 @@
   </footer>
 
 </body>
+
+<script src="../javascript/giftcard.js"></script>
+
 </html>
