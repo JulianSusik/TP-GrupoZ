@@ -17,8 +17,6 @@ body {
   line-height: 1.6;
 }
 
-
-
 section {
   margin-top: 3rem;
 }
@@ -30,20 +28,22 @@ h1 {
 }
 
 .container {
-  flex: 1; 
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2em;
 }
+
 ol {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr)); /* siempre 7 columnas */
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  /* siempre 7 columnas */
   grid-template-rows: 4em repeat(5, 1fr);
   width: 100%;
   border: 2px solid #ccc;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 .day {
@@ -81,9 +81,12 @@ ol {
 }
 
 .evento a {
-  color: white;           /* color del texto */
-  text-decoration: none;  /* elimina el subrayado */
-  font-weight: bold;      /* opcional: lo hace más legible */
+  color: white;
+  /* color del texto */
+  text-decoration: none;
+  /* elimina el subrayado */
+  font-weight: bold;
+  /* opcional: lo hace más legible */
 }
 
 .pasado {
@@ -98,10 +101,98 @@ ol {
   border: 2px solid #a57e3d;
 }
 
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: #111111bd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+  z-index: 1000;
+}
+
+.modal--show {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.modal__container {
+  width: 90%;
+  max-width: 550px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2.5em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal__img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+.modal__title {
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.modal__paragraph {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.modal__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.modal__btn {
+  text-decoration: none;
+  padding: 0.8em 1.8em;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all .3s ease;
+  font-size: 1rem;
+}
+
+.modal__detalle {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.modal__detalle:hover {
+  background-color: #1e7e34;
+}
+
+.modal__close {
+  background-color: #F26250;
+  color: #fff;
+}
+
+.modal__close:hover {
+  background-color: #fff;
+  color: #F26250;
+  border: 1px solid #F26250;
+}
+
+
 @media (max-width: 900px) {
   .day {
     font-size: 1em;
   }
+
   .days {
     font-size: 0.9em;
     padding: 0.3em;
@@ -112,6 +203,7 @@ ol {
   .day {
     font-size: 0.8em;
   }
+
   .days {
     font-size: 0.75em;
     padding: 0.2em;
