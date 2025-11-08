@@ -6,14 +6,13 @@
     <link rel="stylesheet" href="../css/recuperar.css" />
     <title>Recuperar Contraseña</title>
   </head>
-
   <body>
     <div class="container">
       <main>
         <h1 class="title">Recuperar Contraseña</h1>
         <p class="subtitle">Ingresá tu email y nombre de usuario</p>
 
-        <form class="login-form" action="../index.html">
+        <form class="login-form" id="form-recuperar">
           <fieldset>
             <legend>Datos de recuperación</legend>
 
@@ -41,15 +40,18 @@
           </fieldset>
 
           <div class="acciones">
-            <div class="acciones">
-             <button type="submit" class="btn">ENVIAR EMAIL</button>
-              <a href="../index.html" class="btn">CANCELAR</a>
-            </div>
+            <button type="submit" class="btn" id="btn-enviar">
+              ENVIAR EMAIL
+            </button>
+            <button type="button" class="btn" id="btn-cancelar">
+              CANCELAR
+            </button>
           </div>
+
+          <p id="mensaje"></p>
         </form>
       </main>
     </div>
+    <script src="../javascript/recuperar.js"></script>
   </body>
 </html>
-
-
