@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +8,6 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
-
 
 main {
   padding: 2rem;
@@ -42,7 +40,7 @@ h2 {
   border-radius: 8px;
 } */
 
-.slider {
+/* .slider {
   position: relative; 
   display: flex;
   justify-content: center;
@@ -81,13 +79,109 @@ h2 {
 
 .flecha:hover {
   background: rgba(0, 0, 0, 0.8);
-}
+} */
 
 /* Pasos */
 /* .listado-pasos {
   margin-left: 1.5rem;
   margin-bottom: 2rem;
 } */
+
+/* === SLIDER === */
+/* .slider {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slider img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.5s ease;
+} */
+
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 350px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+.slider img.activa {
+  display: block;
+  opacity: 1;
+}
+
+.flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.flecha.izquierda {
+  left: 10px;
+}
+.flecha.derecha {
+  right: 10px;
+}
+
+/* === Puntos de navegación === */
+.puntos {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.punto {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.punto:hover {
+  background-color: white;
+  transform: scale(1.2);
+}
+
+.punto.activo {
+  background-color: #ff6f00;
+}
+
+/* .................... */
 
 .listado-pasos {
   display: grid;
@@ -103,7 +197,6 @@ h2 {
   border-radius: 8px;
   text-align: center;
 }
-
 
 .cursos-destacados {
   display: grid;
@@ -130,21 +223,19 @@ h2 {
 }
 
 .seccion-destacados {
-  background-color: #f4f6f9; 
+  background-color: #f4f6f9;
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 2.5rem;
-  border: 1px solid #e1e4e8; 
+  border: 1px solid #e1e4e8;
 }
 
 .seccion-destacados .cursos-destacados article {
-  background-color: #ffffff; 
+  background-color: #ffffff;
   border: 1px solid #d1d5db;
-  border-top: 4px solid #818a9c; 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+  border-top: 4px solid #818a9c;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
-
-
 
 /* Medios de pago */
 /* .medios-de-pago {
@@ -161,10 +252,10 @@ h2 {
 
 .medios-de-pago {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  gap: 1rem; 
-  flex-wrap: wrap; 
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
   margin-top: 1rem;
 }
 
@@ -172,4 +263,3 @@ h2 {
   max-width: 80px;
   height: auto;
 }
-
