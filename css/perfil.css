@@ -141,10 +141,26 @@ input:focus {
 }
 
 .btn-cerrar {
-  background-color: #B5341B;
+  background-color: #b5341b;
   color: black;
   /* nueva */
   text-decoration: none;
+}
+
+.btn-eliminar {
+  background-color: #c62828;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-left: 18em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-eliminar:hover {
+  background-color: #b71c1c;
 }
 
 /* RESPONSIVE */
@@ -161,4 +177,3 @@ input:focus {
     width: 100%;
   }
 }
-
