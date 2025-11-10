@@ -39,35 +39,23 @@
 }
 
 
-.foto-curso-css,
-.foto-curso-html,
-.foto-curso-js,
-.foto-curso-db,
-.foto-curso-uiux,
-.foto-curso-react,
-.foto-curso-git,
-.foto-curso-py {
-  width: 290px;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  overflow: hidden; 
+/* Unificamos todas las clases en una sola */
+.foto-curso-detalle {
+width: 290px;
+height: 250px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 8px;
+overflow: hidden; 
 }
 
-.foto-curso-css img,
-.foto-curso-html img,
-.foto-curso-js img,
-.foto-curso-db img,
-.foto-curso-uiux img,
-.foto-curso-react img,
-.foto-curso-git img,
-.foto-curso-py img {
-  width: 125%;
-  height: 150%;
-  object-fit: contain;
-  object-position: right center;
+/* Unificamos todas las reglas de la imagen */
+.foto-curso-detalle img {
+width: 125%;
+height: 150%;
+object-fit: contain;
+object-position: right center;
 }
 
 .btn-inscribirse {
