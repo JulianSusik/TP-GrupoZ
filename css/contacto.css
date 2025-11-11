@@ -106,3 +106,90 @@ button:hover {
   height: 100%;
   border: 0;
 }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: #111111bd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+  z-index: 1000;
+}
+
+.modal--show {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.modal__container {
+  width: 90%;
+  max-width: 550px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2.5em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal__img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+.modal__title {
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.modal__paragraph {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.modal__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.modal__btn {
+  text-decoration: none;
+  padding: 0.8em 1.8em;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all .3s ease;
+  font-size: 1rem;
+}
+
+.modal__detalle {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.modal__detalle:hover {
+  background-color: #1e7e34;
+}
+
+.modal__close {
+  background-color: #06ff12;
+  color: #fff;
+}
+
+.modal__close:hover {
+  background-color: #fff;
+  color: #0bc21b;
+  border: 1px solid #F26250;
+}
+
