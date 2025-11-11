@@ -50,13 +50,30 @@
       <section class="contacto-container">
         <article class="formulario-contacto">
           <h2>CONTACTO</h2>
-          <form action="confirmacion.html" method="get">
-  <input type="text" placeholder="Nombre" required>
-  <input type="email" placeholder="Email" required>
-  <textarea placeholder="Mensaje" required></textarea>
-  <button type="submit">ENVIAR</button>
+          <form action="confirmacion.html" method="get" id="form">
+  <input type="text" placeholder="Nombre" id="name" required>
+  <p class="error js-error-nombre"></p>
+   <input type="text" placeholder="Apellido" id="apellido" required>
+   <p class="error js-error-apellido"></p>
+  <input type="email" placeholder="Email" id="email">
+   <p class="error js-error-email"></p>
+   <input type="number" placeholder="Teléfono (opcional: 1234-5678)" id="tel" maxlength="9">
+   <p class="error js-error-tel"></p>
+  <textarea placeholder="Mensaje" id="mensaje" required></textarea>
+  <p id="contador">0 / 1000 caracteres</p>
+  <p class="error js-error-mensaje"></p>
+  
+  <button type="submit" class="btnEnviar">ENVIAR</button>
 </form>
-        </article>
+</article>
+<section class="modal" id="modal-contacto">
+ <div class="modal__container">
+   <h2 class="modal__paragraph">Consulta enviada exitosamente ✅</h2>
+   <div class="modal__buttons">
+     <a href="#" class="modal__btn modal__close">Aceptar</a>
+   </div>
+ </div>
+</section>
 
         <section class="info-contacto">
           <h2>UDEMY CURSOS</h2>
@@ -112,5 +129,7 @@
         </div>
       </div>
     </footer>
+  
+    <script src="../javascript/contacto.js"></script>
   </body>
 </html>
