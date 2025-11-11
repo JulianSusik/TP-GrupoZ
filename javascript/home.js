@@ -59,9 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
           <a href="../cursos/detalle-curso.html?id=${curso.id}">
             <button>Ver detalle</button>
           </a>
-          <button class="btn-agregar" data-id="${curso.id}">
-            Agregar al Carrito
-          </button>
         </article>
       `;
       contenedor.innerHTML += articleHTML;
