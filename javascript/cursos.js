@@ -210,7 +210,7 @@ export const todosLosCursos = [
     descripcion: "Domina la librería de JavaScript más popular para crear interfaces de usuario modernas y dinámicas.",
     requisitos: "Conocimientos sólidos de HTML, CSS y especialmente JavaScript (ES6+).",
     docente: {
-      nombre: "Javier Milei", // El HTML indicaba "Javier Milei"
+      nombre: "Javier Menz", // 
       rating: 4, // 4 estrellas (de ⭐⭐⭐⭐☆)
       bio: "Desarrollador Frontend especialista en el ecosistema de React. Apasionado por la performance web."
     },
@@ -242,7 +242,7 @@ export const todosLosCursos = [
     requisitos: "Conocimientos básicos de manejo de la terminal o línea de comandos.",
     docente: {
       nombre: "Ricardo Tapia",
-      rating: 5, // 5 estrellas
+      rating: 5, // 
       bio: "DevOps Engineer con experiencia en automatización de procesos y trabajo colaborativo."
     },
     contenidos: [
