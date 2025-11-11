@@ -24,6 +24,48 @@ body {
   margin-bottom: 2rem;
 }
 
+/* ------------------------------------------- */
+/* ESTILOS DEL SELECT (simulando #search-input) */
+/* ------------------------------------------- */
+.select-wrapper {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#buscador-cursos {
+    /* Estilos copiados de #search-input: */
+    padding: 5px 18px;
+    border-radius: 15px; /* Bordes redondeados */
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 250px; /* Un poco más de ancho para las flechas */
+    outline: none;
+    transition: all 0.3s ease;
+
+    /* Estilos específicos para Select para mejorar la apariencia en navegadores */
+    -webkit-appearance: none; /* Elimina la apariencia nativa en Chrome/Safari */
+    -moz-appearance: none;    /* Elimina la apariencia nativa en Firefox */
+    appearance: none;         /* Elimina la apariencia nativa */
+    background-color: #fff;
+
+    /* Opcional: Agregar un icono de flecha personalizado (solo para navegadores modernos) */
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M7.41%2C8.58L12%2C13.17L16.59%2C8.58L18%2C10L12%2C16L6%2C10L7.41%2C8.58Z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px; /* Espacio para la flecha */
+    cursor: pointer;
+}
+
+
+/* Efecto al hacer clic en el select (similar a #search-input:focus) */
+#buscador-cursos:focus {
+    border-color: #555;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
 .perfil-header .title {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -141,10 +183,26 @@ input:focus {
 }
 
 .btn-cerrar {
-  background-color: #B5341B;
+  background-color: #b5341b;
   color: black;
   /* nueva */
   text-decoration: none;
+}
+
+.btn-eliminar {
+  background-color: #c62828;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-left: 18em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-eliminar:hover {
+  background-color: #b71c1c;
 }
 
 /* RESPONSIVE */
@@ -161,4 +219,3 @@ input:focus {
     width: 100%;
   }
 }
-

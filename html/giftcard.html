@@ -16,26 +16,26 @@
   <div class="contenedor-header">
     <div class="logo">
       <img src="../img/logo.png" alt="Logo del sitio" />
+      <span class="site-title">UDEMY CURSOS</span>
     </div>
 
     
-    <form action="">
-          <select onchange="location = this.value;">
-            <option value="">Buscar cursos...</option>
-            <option value="../cursos/curso-html.html">HTML Básico</option>
-            <option value="../cursos/curso-css.html">CSS Avanzado</option>
-            <option value="../cursos/curso-js.html">JavaScript Inicial</option>
-            <option value="../cursos/curso-db.html">Base de Datos</option>
-          </select>
-      </form>
+       <div class="select-wrapper">
+        <select id="buscador-cursos" onchange="location = this.value;">
+        <option value="">Buscar cursos...</option>
+        <option value="../cursos/detalle-curso.html?id=1">HTML Básico</option>
+        <option value="../cursos/detalle-curso.html?id=2">CSS Avanzado</option>
+        <option value="../cursos/detalle-curso.html?id=3">JavaScript Inicial</option>
+        <option value="../cursos/detalle-curso.html?id=4">Base de Datos</option>
+        <option value="../cursos/detalle-curso.html?id=5">Python Básico</option>
+        <option value="../cursos/detalle-curso.html?id=6">React Avanzado</option>
+        <option value="../cursos/detalle-curso.html?id=7">Node.js Inicial</option>
+        <option value="../cursos/detalle-curso.html?id=8">SQL Avanzado</option>
+        </select>
+        </div>
+
 
     
-    <a href="../html/carrito.html" class="carrito">
-          <img src="../img/carrito-de-compras.png" alt="Carrito del sitio" />
-          <span class="contador">3</span>
-        </a>
-
-   
     <nav>
       <ul>
         <li><a href="home.html">Inicio</a></li>
@@ -44,6 +44,7 @@
         <li><a href="giftcard.html">Giftcard</a></li>
         <li><a href="formulario.html">Inscripción</a></li>
         <li><a href="perfil.html">Perfil</a></li>
+        <li><a href="../html/carrito.html" class="carrito"><img src="../img/carrito-de-compras.png" alt="Carrito del sitio" /><span class="contador">3</span></a></li>
       </ul>
     </nav>
   </div>
@@ -54,7 +55,7 @@
     <section class="preview-area" aria-label="Vista previa de gift card">
       <div class="card"
            id="card"
-           data-pos="tr"    <!-- posición inicial del monto: top-right -->
+           data-pos="tr"    <!-- posición inicial del monto; top-right-->
         
        
         <div class="amount-badge" id="amountBadge">
@@ -230,8 +231,7 @@
           <li>Ana Maria Alderete - DNI 36782140</li>
           <li>Luis Maurcicio Frieri - DNI 30700098</li>
           <li>Agustin Fernando Pelle - DNI 42116498</li>
-          <li>Julian Alan Susik - DNI 44816527</li>
-          <li></li>
+            <li>Julian Alan Susik - DNI 44816527</li>
         </ul>
       </div>
 

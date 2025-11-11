@@ -3,25 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario de Contacto</title>
-    <link rel="stylesheet" href="../css/confirmacion.css" />
-    <link rel="stylesheet" href="../css/header-footer.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <title>Contacto</title>
+    <title>Detalle del Curso</title>
+    <link rel="stylesheet" href="../css/cursos.css" />
+    <link rel="stylesheet" href="../css/header-footer.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
-
   <body>
     <header>
       <div class="contenedor-header">
         <div class="logo">
-          <a href="../html/home.html"><img src="../img/logo.png" alt="Logo del sitio" /></a>
+          <a href="../html/home.html">
+            <img src="../img/logo.png" alt="Logo del sitio" />
+          </a>
           <span class="site-title">UDEMY CURSOS</span>
         </div>
 
-        <div class="select-wrapper">
+        <div class="search-courses">
         <select id="buscador-cursos" onchange="location = this.value;">
         <option value="">Buscar cursos...</option>
         <option value="../cursos/detalle-curso.html?id=1">HTML Básico</option>
@@ -35,15 +32,14 @@
         </select>
         </div>
 
-
         <nav>
           <ul>
-            <li><a href="home.html">Inicio</a></li>
-            <li><a href="calendario.html">Calendario</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="giftcard.html">Giftcard</a></li>
-            <li><a href="formulario.html">Inscripción</a></li>
-            <li><a href="perfil.html">Perfil</a></li>
+            <li><a href="../html/home.html">Inicio</a></li>
+            <li><a href="../html/calendario.html">Calendario</a></li>
+            <li><a href="../html/contacto.html">Contacto</a></li>
+            <li><a href="../html/giftcard.html">Giftcard</a></li>
+            <li><a href="../html/formulario.html">Inscripción</a></li>
+            <li><a href="../html/perfil.html">Perfil</a></li>
             <li><a href="../html/carrito.html" class="carrito"><img src="../img/carrito-de-compras.png" alt="Carrito del sitio" /><span class="contador">3</span></a></li>
           </ul>
         </nav>
@@ -51,9 +47,23 @@
     </header>
 
     <main>
-      <div class="mensaje-exito">¡El mensaje se envió correctamente!</div>
-      <a href="contacto.html" class="boton-volver">Volver al formulario</a>
+      <div id="detalle-info-container" class="info-curso">
+      </div>
+
+      <h2 class="titulo-contenido">Contenidos por clase</h2>
+      <div id="detalle-contenidos-container" class="contenidos">
+      </div>
+
+      <section id="detalle-docente-container" class="docente">
+      </section>
     </main>
+
+    <section>
+      <h2>Cursos destacados</h2>
+      <div id="detalle-destacados-container" class="cursos-destacados">
+      </div>
+    </section>
+
     <footer>
       <div class="contenedor-footer">
         <div class="columna">
@@ -65,7 +75,6 @@
             <li>Julian Alan Susik - DNI 44816527</li>
           </ul>
         </div>
-
         <div class="columna">
           <h3>Menú</h3>
           <ul>
@@ -74,7 +83,6 @@
             <li><a href="#">Ayuda</a></li>
           </ul>
         </div>
-
         <div class="columna">
           <h3>Síguenos</h3>
           <ul>
@@ -85,5 +93,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="../javascript/detalle.js" type="module"></script>
   </body>
 </html>

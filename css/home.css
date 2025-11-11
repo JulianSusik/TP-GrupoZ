@@ -105,6 +105,51 @@ h2 {
   transition: opacity 0.5s ease;
 } */
 
+
+
+
+#search-form {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* La barra de búsqueda */
+#search-input {
+  padding: 8px 12px;
+  border-radius: 15px; /* Bordes redondeados */
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 220px; /* Ajusta el ancho como prefieras */
+  outline: none; /* Saca el borde azul al hacer clic */
+  transition: all 0.3s ease;
+}
+
+
+/* Efecto al hacer clic en la barra */
+#search-input:focus {
+  border-color: #555;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* Opcional: Estilo para el texto "Buscar cursos..." */
+#search-input::placeholder {
+  color: #999;
+}
+
+/* --- Estilo para Mensaje "No Resultados" (agregar a home.css) --- */
+
+.no-resultados {
+  text-align: center;
+  color: #777;
+  width: 100%;
+  padding: 20px;
+  font-style: italic;
+}
+
 .slider {
   position: relative;
   width: 100%;
