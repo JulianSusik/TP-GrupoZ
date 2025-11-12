@@ -135,6 +135,43 @@ dialog::backdrop {
   line-height: 1.4;
 }
 
+/* Estilos para el resumen en el modal */
+.dlg-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  text-align: left;
+}
+.dlg-body li {
+  margin-bottom: 5px;
+}
+.dlg-body .resumen-total {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+/* Estilos para el resumen en el modal */
+.dlg-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  text-align: left;
+}
+.dlg-body li {
+  margin-bottom: 5px;
+}
+.dlg-body .resumen-total {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: right;
+}
+
 .dlg-body p strong {
   color: #222;
 }

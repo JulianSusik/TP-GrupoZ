@@ -5,9 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- 1. SELECTORES DEL DOM ---
   
-  // Contador
-  const contadorSpan = document.querySelector(".contador");
-  
   // Slider
   const imagenes = document.querySelectorAll(".slider img");
   const btnIzquierda = document.querySelector(".flecha.izquierda");
@@ -24,22 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- 2. DATOS Y LISTAS ---
   
-  let contadorCursos = parseInt(sessionStorage.getItem("contadorCursos")) || 0;
   let indiceActual = 0;
   let intervalo;
   const cursosDestacados = todosLosCursos.filter(curso => curso.categoria === 'destacado');
   const otrosCursos = todosLosCursos.filter(curso => curso.categoria === 'otro');
 
   // --- 3. FUNCIONES ---
-
-  // Función del Contador
-  function actualizarContador(nuevoValor) {
-    contadorCursos = nuevoValor;
-    contadorSpan.textContent = contadorCursos;
-    sessionStorage.setItem("contadorCursos", contadorCursos);
-  }
-
-  // Función de Renderizado de Cursos (MODIFICADA)
+  
+  // Función de Renderizado de Cursos
   function renderizarCursos(cursos, contenedor) {
     contenedor.innerHTML = ''; // Limpiar el contenedor
 
@@ -87,11 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- 4. EVENT LISTENERS ---
 
-  // Listener del Contador
-  window.addEventListener("cursoInscripto", () => {
-    actualizarContador(contadorCursos + 1);
-  });
-
   // Listeners del Slider
   btnIzquierda.addEventListener("click", () => {
     indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
@@ -129,9 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // --- 5. EJECUCIÓN INICIAL ---
-
-  // Iniciar Contador
-  contadorSpan.textContent = contadorCursos;
 
   // Crear puntos indicadores del Slider
   const contenedorIndicadores = document.createElement("div");

@@ -19,6 +19,62 @@ h2 {
   text-align: center;
 }
 
+.carrito {
+  position: relative;
+  list-style: none;
+}
+
+.carrito-icono {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  position: relative;
+}
+
+.carrito-icono .contador {
+  background-color: #ff0000;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -6px;
+  right: -8px;
+}
+
+/* Tooltip flotante */
+.resumen-carrito-tooltip {
+  position: absolute;
+  right: 0;
+  top: 120%;
+  background-color: #fff;
+  padding: 16px;
+  width: 280px;
+  color: #222;
+  border: 1px solid #eee;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+  z-index: 999;
+}
+
+/* Mostrar tooltip al pasar por el carrito */
+.carrito:hover .resumen-carrito-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+
 /* Slider */
 /* .slider img {
   width: 100%;

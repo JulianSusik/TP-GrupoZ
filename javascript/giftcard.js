@@ -99,27 +99,57 @@ const errorDlg  = document.getElementById('errorDlg');
 const errorMsg  = document.getElementById('errorMsg');
 const confirmBtn= document.getElementById('confirmBtn');
 const confirmDlg= document.getElementById('confirmDlg');
-
+const form      = document.getElementById('giftcardForm'); // Referencia al nuevo formulario
 
 openBtn.addEventListener('click', () => {
     const campoName = document.getElementById("nombre");
     const campoMonto = document.getElementById("monto");
-    if (campoName.value.trim() === "" || campoMonto.value === "") {
-      // Mostrar modal de ERRORES
+
+    if (campoName.value.trim() === "" || campoMonto.value.trim() === "" || parseFloat(campoMonto.value) <= 0) {
+      // Mostrar modal de ERRORES si el nombre está vacío o el monto es inválido
       const html = `
         <div>
-          Por favor ingresar Destinatario y Monto
+          Por favor, ingresa un destinatario y un monto válido mayor a cero.
         </div>`;
       errorMsg.innerHTML = html;
       errorDlg.showModal();
     } else {
-    console.log("hasta aca llegue")
-    // Si todo está OK, abrimos el modal de confirmación
-    confirmDlg.showModal(); }
+      // Si todo está OK, abrimos el modal de confirmación
+      confirmDlg.showModal(); 
+    }
   });
 
-  /* Confirmar => enviar formulario respetando validaciones nativas   */
-confirmBtn.addEventListener('click', () => {
-    confirmDlg.close();
-    form.requestSubmit();
+/* ===================================================
+   AGREGAR AL CARRITO (AHORA CONECTADO AL BOTÓN CORRECTO)
+=================================================== */
+if (confirmBtn) {
+  confirmBtn.addEventListener("click", () => {
+    // 1. Obtener el usuario activo
+    const usuarioActivo = JSON.parse(localStorage.getItem("usuarioSesionIniciada"));
+    if (!usuarioActivo) {
+      alert("Debes iniciar sesión para agregar giftcards al carrito.");
+      window.location.href = "../index.html";
+      return;
+    }
+
+    // 2. Obtener los datos de la giftcard desde los campos del formulario
+    const nombreDestinatario = document.getElementById("nombre").value.trim() || "Destinatario";
+    const monto = parseFloat(document.getElementById("monto").value) || 0;
+
+    const carritoKey = `carrito_${usuarioActivo.usuario}`;
+    let carrito = JSON.parse(localStorage.getItem(carritoKey)) || [];
+
+    // 3. Crear y añadir el objeto de la giftcard
+    carrito.push({
+      id: `gift-${Date.now()}`, // ID único para la giftcard
+      nombre: `Gift Card para ${nombreDestinatario}`,
+      precio: monto,
+      cantidad: 1,
+      tipo: 'giftcard' // Tipo para diferenciar de los cursos
+    });
+
+    // 4. Guardar en localStorage y redirigir
+    localStorage.setItem(carritoKey, JSON.stringify(carrito));
+    window.location.href = 'carrito.html';
   });
+}

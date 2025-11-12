@@ -86,4 +86,38 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "../index.html";
     }
   });
+
+  // --- NUEVO: Cargar y mostrar historial de compras ---
+  const historialContainer = document.getElementById("historial-container");
+  if (historialContainer && usuarioSesion) {
+    const historialKey = `historial_${usuarioSesion.usuario}`;
+    const historial = JSON.parse(localStorage.getItem(historialKey)) || [];
+
+    if (historial.length === 0) {
+      historialContainer.innerHTML = "<p>Aún no has realizado ninguna compra.</p>";
+    } else {
+      let historialHtml = "";
+      // Mostramos las compras de la más reciente a la más antigua
+      historial.slice().reverse().forEach((compra, index) => {
+        historialHtml += `
+          <div class="compra-record">
+            <div class="compra-header">
+              <h4>Compra realizada el ${compra.fecha}</h4>
+              <span>Total: $${compra.total}</span>
+            </div>
+            <ul class="compra-items">
+        `;
+
+        compra.items.forEach(item => {
+          historialHtml += `<li>${item.cantidad}x ${item.nombre}</li>`;
+        });
+
+        historialHtml += `
+            </ul>
+          </div>
+        `;
+      });
+      historialContainer.innerHTML = historialHtml;
+    }
+  }
 });

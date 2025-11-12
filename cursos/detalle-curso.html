@@ -40,7 +40,33 @@
             <li><a href="../html/giftcard.html">Giftcard</a></li>
             <li><a href="../html/formulario.html">Inscripción</a></li>
             <li><a href="../html/perfil.html">Perfil</a></li>
-            <li><a href="../html/carrito.html" class="carrito"><img src="../img/carrito-de-compras.png" alt="Carrito del sitio" /><span class="contador">3</span></a></li>
+            <!-- INICIO NUEVA ESTRUCTURA CARRITO -->
+            <li class="submenu">
+              <a href="../html/carrito.html" class="carrito-link">
+                <div id="contador" class="contador">0</div>
+                <img src="../img/carrito-de-compras.png" id="img-carrito" alt="Carrito">
+              </a>
+              <div class="carrito" id="carrito-resumen">
+                  <table class="carrito__color" id="lista-carrito">
+                      <thead>
+                          <tr>
+                              <th>Producto</th>
+                              <th>Cantidad</th>
+                              <th>Precio</th>
+                              <th></th>
+                          </tr>
+                      </thead>
+                      <tbody id="containerCarrito"></tbody>
+                      <tfoot>
+                        <tr>
+                          <td colspan="4" id="carrito-total-resumen" class="carrito-total-resumen">Total: $0</td>
+                        </tr>
+                      </tfoot>
+                  </table>
+                  <a href="#" id="vaciarCarrito" class="btnVaciar">Vaciar Carrito</a>
+              </div>
+            </li>
+            <!-- FIN NUEVA ESTRUCTURA CARRITO -->
           </ul>
         </nav>
       </div>
@@ -95,5 +121,6 @@
     </footer>
 
     <script src="../javascript/detalle.js" type="module"></script>
+    <script src="../javascript/carrito.js"></script>
   </body>
 </html>

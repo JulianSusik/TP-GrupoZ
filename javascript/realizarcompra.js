@@ -76,28 +76,57 @@ document.addEventListener("DOMContentLoaded", () => {
     if (errores.length > 0) {
       mostrarError(errores);
     } else {
-      // Simulación de datos del curso
-      const curso = JSON.parse(localStorage.getItem("cursoSeleccionado")) || {
-        titulo: "Curso sin nombre",
-        modalidad: "Online",
-        fecha: "No definida",
-        precio: 20,
-      };
+      // --- LÓGICA PARA MOSTRAR RESUMEN Y VACIAR CARRITO ---
+      const usuarioActivo = JSON.parse(localStorage.getItem("usuarioSesionIniciada"));
+      let resumenHtml = '<p>¡Tu compra ha sido procesada con éxito!</p>'; // Mensaje por defecto
 
-      felicitacionMsg.innerHTML = `
-        <p>¡Tu inscripción fue exitosa!</p>
-        <p><strong>Curso:</strong> ${curso.titulo}</p>
-        <p><strong>Modalidad:</strong> ${curso.modalidad}</p>
-        <p><strong>Fecha:</strong> ${curso.fecha}</p>
-        <p><strong>Precio:</strong> $${curso.precio} USD</p>
-      `;
+      if (usuarioActivo) {
+        const carritoKey = `carrito_${usuarioActivo.usuario}`;
+        const carrito = JSON.parse(localStorage.getItem(carritoKey)) || [];
+
+        if (carrito.length > 0) {
+          let total = 0;
+          resumenHtml = "<h4>Resumen de tu compra:</h4><ul>";
+
+          carrito.forEach(item => {
+            const subtotal = item.precio * item.cantidad;
+            resumenHtml += `<li>${item.cantidad}x ${item.nombre} - $${subtotal}</li>`;
+            total += subtotal;
+          });
+
+          resumenHtml += `</ul><p class="resumen-total"><strong>Total pagado: $${total}</strong></p>`;
+
+          // --- NUEVO: Guardar en el historial antes de vaciar ---
+          const historialKey = `historial_${usuarioActivo.usuario}`;
+          let historial = JSON.parse(localStorage.getItem(historialKey)) || [];
+          const hoy = new Date().toLocaleDateString();
+          
+          // Buscamos si ya hay una compra registrada hoy
+          let compraDeHoy = historial.find(compra => compra.fecha === hoy);
+
+          if (compraDeHoy) {
+            // Si existe, agregamos los nuevos items y sumamos el total
+            compraDeHoy.items.push(...carrito);
+            compraDeHoy.total += total;
+          } else {
+            // Si no existe, creamos un nuevo registro para el día
+            historial.push({ fecha: hoy, items: carrito, total: total });
+          }
+          
+          localStorage.setItem(historialKey, JSON.stringify(historial));
+
+          // Ahora sí, vaciar el carrito
+          localStorage.removeItem(carritoKey);
+        }
+      }
+
+      felicitacionMsg.innerHTML = resumenHtml;
 
       felicitacionDlg.showModal();
     }
   });
 
   continuarBtn.addEventListener("click", () => {
-    felicitacionDlg.close();
-    window.location.href = form.action;
+    window.location.href = "perfil.html";
   });
 });

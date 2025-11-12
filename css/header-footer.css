@@ -62,23 +62,6 @@ select {
   min-width:  40%;
 }
 
-
-.carrito {
-  position: relative;
-  font-size: 1.5rem;
-}
-
-.carrito .contador {
-  position: absolute;
-  top: -0.5rem;
-  right: -0.75rem;
-  background: red;
-  color: white;
-  font-size: 0.75rem;
-  padding: 0.125rem 0.375rem;
-  border-radius: 50%;
-}
-
 nav {
   flex: 1;
   display: flex;
@@ -165,6 +148,101 @@ footer {
   }
 }
 
+/* --- ESTILOS CARRITO (Adaptados de tu CSS) --- */
+.submenu {
+  position: relative;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
 
+/* Nuevo: Estilo para el enlace del carrito */
+.submenu .carrito-link {
+  position: relative; /* Necesario para que el contador se posicione correctamente */
+  display: flex;
+}
 
+.submenu #img-carrito {
+  cursor: pointer;
+  width: 24px; /* Ajusta según sea necesario */
+  height: auto;
+}
 
+.submenu .contador {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  z-index: 2;
+}
+
+.submenu .carrito {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 1000;
+  background-color: white;
+  padding: 20px;
+  min-height: 300px; /* Ajustado */
+  width: 350px; /* Ancho fijo */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 8px;
+}
+
+.submenu:hover .carrito {
+  display: block;
+}
+
+.carrito__color {
+  color: black;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.btnVaciar {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: .5rem;
+  width: 100%;
+  margin-top: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Estilo para el total en el resumen del carrito */
+.carrito-total-resumen {
+  text-align: right;
+  font-weight: bold;
+  padding: 8px;
+  border-top: 2px solid #333;
+  font-size: 1.1em;
+}
+
+/* Estilo para el botón de eliminar item en el resumen del carrito */
+.btn-eliminar-item {
+  background-color: transparent;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.btn-eliminar-item:hover {
+  background-color: #f1f1f1;
+  color: #ff0000;
+}

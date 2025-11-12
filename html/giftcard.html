@@ -44,7 +44,33 @@
         <li><a href="giftcard.html">Giftcard</a></li>
         <li><a href="formulario.html">Inscripción</a></li>
         <li><a href="perfil.html">Perfil</a></li>
-        <li><a href="../html/carrito.html" class="carrito"><img src="../img/carrito-de-compras.png" alt="Carrito del sitio" /><span class="contador">0</span></a></li>
+        <!-- INICIO NUEVA ESTRUCTURA CARRITO -->
+        <li class="submenu">
+          <a href="../html/carrito.html" class="carrito-link">
+            <div id="contador" class="contador">0</div>
+            <img src="../img/carrito-de-compras.png" id="img-carrito" alt="Carrito">
+          </a>
+          <div class="carrito" id="carrito-resumen">
+              <table class="carrito__color" id="lista-carrito">
+                  <thead>
+                      <tr>
+                          <th>Producto</th>
+                          <th>Cantidad</th>
+                          <th>Precio</th>
+                          <th></th>
+                      </tr>
+                  </thead>
+                  <tbody id="containerCarrito"></tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="4" id="carrito-total-resumen" class="carrito-total-resumen">Total: $0</td>
+                    </tr>
+                  </tfoot>
+              </table>
+              <a href="#" id="vaciarCarrito" class="btnVaciar">Vaciar Carrito</a>
+          </div>
+        </li>
+        <!-- FIN NUEVA ESTRUCTURA CARRITO -->
       </ul>
     </nav>
   </div>
@@ -74,7 +100,7 @@
     </section>
 
   
-    <section class="controls" aria-label="Controles de personalización">
+    <form id="giftcardForm" class="controls" aria-label="Controles de personalización">
       <!-- Nombre -->
       <h3 class="page-header">Personalización de Giftcard</h3>
 
@@ -188,7 +214,7 @@
       </div>
 
       <div> 
-           <button  id="openModalBtn" class="btn-agregar">
+           <button type="button" id="openModalBtn" class="btn-agregar">
           AGREGAR GIFTCARD
           </button>
       </div>
@@ -213,12 +239,12 @@
             </div>
             <div class="dlg-actions">
               <button value="cancel" class="btn-red">Cancelar</button>
-              <button id="confirmBtn" class="btn-green" onclick="window.location.href='carrito.html'">Confirmar</button> 
+              <button id="confirmBtn" class="btn-green" type="button">Confirmar</button> 
             </div>
           </form>
         </dialog>
 
-    </section>
+    </form>
   </main>
 
 

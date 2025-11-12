@@ -13,6 +13,19 @@ if (curso) {
     <h2>${curso.titulo}</h2>
     <h4>INSCRIPCIÓN</h4>
   `;
+} else {
+  // Si no hay un curso en la URL, decidimos a dónde redirigir.
+  const usuarioActivo = JSON.parse(localStorage.getItem("usuarioSesionIniciada"));
+  const carrito = (usuarioActivo && JSON.parse(localStorage.getItem(`carrito_${usuarioActivo.usuario}`))) || [];
+
+  if (carrito.length > 0) {
+    alert("Ya tenes uno o mas cursos seleccionados en el carrito. Serás redirigido al carrito.");
+    window.location.href = "carrito.html";
+  } else {
+    // Si el carrito está vacío, le pedimos que elija un curso.
+    alert("Debes seleccionar un curso e inscribirte");
+    window.location.href = "home.html";
+  }
 }
 
 /* ===========================
@@ -270,5 +283,39 @@ openBtn.addEventListener("click", () => {
 // Confirmar inscripción → redirigir al carrito
 confirmBtn.addEventListener("click", () => {
   confirmDlg.close();
-  window.location.href = "carrito.html";
+
+  // --- LÓGICA PARA AGREGAR AL CARRITO ---
+  const usuarioActivo = JSON.parse(localStorage.getItem("usuarioSesionIniciada"));
+  if (!usuarioActivo) {
+    alert("Debes iniciar sesión para agregar cursos al carrito.");
+    window.location.href = "../index.html";
+    return;
+  }
+
+  const filas = $$(".fila", cont);
+  const cantidad = filas.length;
+
+  if (curso && cantidad > 0) {
+    const carritoKey = `carrito_${usuarioActivo.usuario}`;
+    let carrito = JSON.parse(localStorage.getItem(carritoKey)) || [];
+
+    // Buscar si el curso ya está en el carrito
+    let cursoEnCarrito = carrito.find(item => item.id === curso.id && item.tipo === 'curso');
+
+    if (cursoEnCarrito) {
+      // Si ya está, sumar la nueva cantidad
+      cursoEnCarrito.cantidad += cantidad;
+    } else {
+      // Si no está, agregarlo como un nuevo item
+      carrito.push({
+        id: curso.id,
+        nombre: curso.titulo,
+        precio: curso.precio,
+        cantidad: cantidad,
+        tipo: 'curso' // Para diferenciar de giftcards
+      });
+    }
+    localStorage.setItem(carritoKey, JSON.stringify(carrito));
+  }
+  window.location.href = "../html/carrito.html";
 });
