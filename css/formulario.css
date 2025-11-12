@@ -340,15 +340,15 @@ button svg {
 
 
 
+/*
 /* ------------------------------------------- */
 /* ESTILOS DEL SELECT (simulando #search-input) */
 /* ------------------------------------------- */
 .select-wrapper {
   display: flex;
   justify-content: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  flex-grow: 1; /* Ocupa el espacio disponible */
+  align-items: center;
 }
 
 #buscador-cursos {
@@ -382,6 +382,95 @@ button svg {
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
+/* ====== MEJORA DEL MODAL DE CONFIRMACIÓN ====== */
+#confirmDlg .dlg-inner {
+  padding: 24px 28px 20px;
+  background: #fff;
+  border-radius: 14px;
+}
+
+#confirmDlg h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+#confirmDlg .dlg-body {
+  text-align: left;
+  background: #fafbfc;
+  border: 1px solid #e1e4e8;
+  border-radius: 10px;
+  padding: 16px;
+  line-height: 1.5;
+  color: #333;
+  font-size: 15px;
+  display: block;
+}
+
+/* Título del curso */
+#confirmDlg .curso-titulo {
+  font-weight: 700;
+  color: #1f6feb;
+  margin-bottom: 8px;
+}
+
+/* Lista de personas inscritas */
+#confirmDlg ul {
+  margin: 10px 0 0 18px;
+  padding: 0;
+  list-style: disc;
+}
+
+#confirmDlg li {
+  margin: 6px 0;
+  padding-left: 4px;
+}
+
+/* Total a pagar */
+#confirmDlg .total-pagar {
+  margin-top: 14px;
+  font-weight: 700;
+  color: #111;
+  font-size: 16px;
+  text-align: right;
+  border-top: 1px solid #e1e4e8;
+  padding-top: 8px;
+}
+
+/* Botones */
+#confirmDlg .dlg-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 18px;
+}
+
+#confirmDlg .btn-green,
+#confirmDlg .btn-red {
+  min-width: 110px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#confirmDlg .btn-green {
+  background-color: #2ea043;
+}
+
+#confirmDlg .btn-red {
+  background-color: #e5534b;
+}
+
+/* Adaptación para móvil */
+@media (max-width: 480px) {
+  #confirmDlg .dlg-body {
+    font-size: 14px;
+  }
+  #confirmDlg .total-pagar {
+    text-align: left;
+  }
+}
 
 
 

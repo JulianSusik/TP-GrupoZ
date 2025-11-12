@@ -201,9 +201,8 @@ button:hover {
 .select-wrapper {
   display: flex;
   justify-content: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  flex-grow: 1; /* Ocupa el espacio disponible */
+  align-items: center;
 }
 
 #buscador-cursos {
@@ -235,4 +234,32 @@ button:hover {
 #buscador-cursos:focus {
     border-color: #555;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .busqueda {
+    order: 3; 
+    width: 100%;
+  }
+
+  nav ul {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .carrito {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    max-width: 90px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
 }

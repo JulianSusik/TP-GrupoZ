@@ -33,9 +33,7 @@ if (curso) {
       <p><strong>Descripción del curso:</strong> ${curso.descripcion}</p>
       <p><strong>Requisitos previos:</strong> ${curso.requisitos}</p>
       
-      <a href="../html/Formulario.html" class="btn-inscribirse">INSCRIBIRSE</a>
-    </div>
-  `;
+      <a href="../html/formulario.html?id=${curso.id}" class="btn-inscribirse">INSCRIBIRSE</a></div>`;
 
   // 5.2 Renderizar los Contenidos (Unidades y Temas)
   let contenidosHTML = ''; 

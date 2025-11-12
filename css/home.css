@@ -110,11 +110,9 @@ h2 {
 
 #search-form {
   display: flex;
+  flex-grow: 1; /* Ocupa el espacio disponible */
+  justify-content: center; /* Centra el input */
   align-items: center;
-  margin: 0 15px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 /* La barra de búsqueda */

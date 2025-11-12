@@ -25,9 +25,8 @@ body {
 .select-wrapper {
   display: flex;
   justify-content: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  flex-grow: 1; /* Ocupa el espacio disponible */
+  align-items: center;
 }
 
 #buscador-cursos {
@@ -457,4 +456,3 @@ dialog::backdrop {
   margin: 4px 0; 
   list-style-type: none;
 }
-

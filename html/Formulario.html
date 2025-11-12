@@ -3,59 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <link rel="stylesheet" href="../css/formulario.css"/>
-  <link rel="stylesheet" href="../css/header-footer.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <title>Formulario</title>
+  <link rel="stylesheet" href="../css/formulario.css" />
+  <link rel="stylesheet" href="../css/header-footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Formulario de Inscripción</title>
 </head>
 
 <body>
   <header>
     <div class="contenedor-header">
       <div class="logo">
-        <a href="../html/home.html"><img src="../img/logo.png" alt="Logo del sitio" /></a>
+        <a href="home.html">
+          <img src="../img/logo.png" alt="Logo del sitio" />
+        </a>
         <span class="site-title">UDEMY CURSOS</span>
       </div>
 
       <div class="select-wrapper">
-        <select id="buscador-cursos" onchange="location = this.value;">
-        <option value="">Buscar cursos...</option>
-        <option value="../cursos/detalle-curso.html?id=1">HTML Básico</option>
-        <option value="../cursos/detalle-curso.html?id=2">CSS Avanzado</option>
-        <option value="../cursos/detalle-curso.html?id=3">JavaScript Inicial</option>
-        <option value="../cursos/detalle-curso.html?id=4">Base de Datos</option>
-        <option value="../cursos/detalle-curso.html?id=5">Python Básico</option>
-        <option value="../cursos/detalle-curso.html?id=6">React Avanzado</option>
-        <option value="../cursos/detalle-curso.html?id=7">Node.js Inicial</option>
-        <option value="../cursos/detalle-curso.html?id=8">SQL Avanzado</option>
+        <select id="buscador-cursos" onchange="if(this.value) location = this.value;">
+          <option value="">Buscar cursos...</option>
+          <option value="../cursos/detalle-curso.html?id=1">HTML Básico</option>
+          <option value="../cursos/detalle-curso.html?id=2">CSS Avanzado</option>
+          <option value="../cursos/detalle-curso.html?id=3">JavaScript Inicial</option>
+          <option value="../cursos/detalle-curso.html?id=4">Base de Datos</option>
+          <option value="../cursos/detalle-curso.html?id=5">Python Básico</option>
+          <option value="../cursos/detalle-curso.html?id=6">React Avanzado</option>
+          <option value="../cursos/detalle-curso.html?id=7">Node.js Inicial</option>
+          <option value="../cursos/detalle-curso.html?id=8">SQL Avanzado</option>
         </select>
-        </div>
+      </div>
+
       <nav>
         <ul>
           <li><a href="home.html">Inicio</a></li>
           <li><a href="calendario.html">Calendario</a></li>
           <li><a href="contacto.html">Contacto</a></li>
           <li><a href="giftcard.html">Giftcard</a></li>
-          <li><a href="formulario.html">Inscripción</a></li>
+          <li><a href="formulario.html" class="activo">Inscripción</a></li>
           <li><a href="perfil.html">Perfil</a></li>
-          <li><a href="../html/carrito.html" class="carrito"><img src="../img/carrito-de-compras.png" alt="Carrito del sitio" /><span class="contador">0</span></a></li>
+          <li>
+            <a href="carrito.html" class="carrito">
+              <img src="../img/carrito-de-compras.png" alt="Carrito del sitio" />
+              <span class="contador">0</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <h3>TITULO CURSO</h3>
-    <h5>INSCRIPCIÓN</h5>
+    <div id="curso-info">
+      <h1>Título del Curso</h1>
+      <h4>Formulario de Inscripción</h4>
+    </div>
 
     <div class="tipo-inscripcion">
       <label>
-        <input type="radio" name="tipo" value="persona" checked>
+        <input type="radio" name="tipo" value="persona" checked />
         Persona
       </label>
       <label>
-        <input type="radio" name="tipo" value="empresa">
+        <input type="radio" name="tipo" value="empresa" />
         Empresa
       </label>
     </div>
@@ -66,19 +75,19 @@
           <div class="fila" data-row="1">
             <div class="campo">
               <label for="nombre-1">Nombre</label>
-              <input id="nombre-1" name="nombre[]" type="text" value="Juan"/>
+              <input id="nombre-1" name="nombre[]" type="text" value="Juan" required />
             </div>
             <div class="campo">
               <label for="apellido-1">Apellido</label>
-              <input id="apellido-1" name="apellido[]" type="text" value="Perez"/>
+              <input id="apellido-1" name="apellido[]" type="text" value="Perez" required />
             </div>
             <div class="campo">
               <label for="documento-1">Documento</label>
-              <input id="documento-1" name="documento[]" type="text" inputmode="numeric" value="23594588"/>
+              <input id="documento-1" name="documento[]" type="text" inputmode="numeric" value="23594588" required />
             </div>
 
-            <button class="btn-borrar" type="button" aria-label="Borrar campos de la fila 1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+            <button class="btn-borrar" type="button" aria-label="Borrar esta fila">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
                 <path d="M5 11h14v2H5z"></path>
               </svg>
             </button>
@@ -86,14 +95,13 @@
         </div>
 
         <div class="acciones-dinamicas">
-          <button type="button" class="btn-agregar-empleado" id="addEmployeeBtn">
-            + Agregar empleado
-          </button>
+          <button type="button" class="btn-agregar-empleado" id="addEmployeeBtn">+ Agregar empleado</button>
         </div>
 
-        <button type="button" id="openModalBtn">AGREGAR CURSO</button>
+        <button type="button" id="openModalBtn">Agregar Curso</button>
       </form>
 
+      <!-- Diálogo de error -->
       <dialog id="errorDlg">
         <form method="dialog" class="dlg-inner">
           <h3>Revisa los datos</h3>
@@ -104,59 +112,61 @@
         </form>
       </dialog>
 
+      <!-- Diálogo de confirmación -->
       <dialog id="confirmDlg">
         <form method="dialog" class="dlg-inner">
           <h3>Confirmación</h3>
-          <div class="dlg-body" id="dlgMsg">
-            ¿Deseas enviar la inscripción?
-          </div>
+          <div class="dlg-body" id="dlgMsg">¿Deseas enviar la inscripción?</div>
           <div class="dlg-actions">
             <button value="cancel" class="btn-red">Cancelar</button>
-            <button id="confirmBtn" class="btn-green" onclick="window.location.href='carrito.html'">Confirmar</button>
+            <button id="confirmBtn" class="btn-green" type="button">Confirmar</button>
           </div>
         </form>
       </dialog>
 
       <div class="total-wrapper" aria-live="polite">
         <label>Total a pagar:</label>
-        <output id="total">$20</output>
+        <output id="total">$0</output>
       </div>
     </section>
   </main>
 
-     <footer>
-      <div class="contenedor-footer">
-        <div class="columna">
-          <h3>Integrantes</h3>
-          <ul>
-            <li>Ana Maria Alderete - DNI 36782140</li>
-            <li>Luis Maurcicio Frieri - DNI 30700098</li>
-            <li>Agustin Fernando Pelle - DNI 42116498</li>
-            <li>Julian Alan Susik - DNI 44816527</li>
-          </ul>
-        </div>
+ 
 
-        <div class="columna">
-          <h3>Menú</h3>
-          <ul>
-            <li><a href="#">Política de privacidad</a></li>
-            <li><a href="#">Términos y condiciones</a></li>
-            <li><a href="#">Ayuda</a></li>
-          </ul>
-        </div>
 
-        <div class="columna">
-          <h3>Síguenos</h3>
-          <ul>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Instagram</a></li>
-          </ul>
-        </div>
+  <footer>
+    <div class="contenedor-footer">
+      <div class="columna">
+        <h3>Integrantes</h3>
+        <ul>
+          <li>Ana María Alderete - DNI 36782140</li>
+          <li>Luis Mauricio Frieri - DNI 30700098</li>
+          <li>Agustín Fernando Pelle - DNI 42116498</li>
+          <li>Julián Alan Susik - DNI 44816527</li>
+        </ul>
       </div>
-    </footer>
 
-  <script src="../javascript/formulario.js"></script>
+      <div class="columna">
+        <h3>Menú</h3>
+        <ul>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+      </div>
+
+      <div class="columna">
+        <h3>Síguenos</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../javascript/formulario.js"></script>
   <script src="../javascript/carrito.js"></script>
 </body>
 </html>

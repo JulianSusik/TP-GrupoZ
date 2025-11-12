@@ -24,15 +24,15 @@ body {
   margin-bottom: 2rem;
 }
 
+
 /* ------------------------------------------- */
 /* ESTILOS DEL SELECT (simulando #search-input) */
 /* ------------------------------------------- */
 .select-wrapper {
   display: flex;
   justify-content: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  flex-grow: 1; /* Ocupa el espacio disponible */
+  align-items: center;
 }
 
 #buscador-cursos {
@@ -65,6 +65,7 @@ body {
     border-color: #555;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
+
 
 .perfil-header .title {
   font-size: 2rem;

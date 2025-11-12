@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sizeRadios  = document.querySelectorAll('input[name="size"]');
     const montoInput  = document.getElementById('monto');
     const bgRadios    = document.querySelectorAll('input[name="bg"]');
+    const posRadios   = document.querySelectorAll('input[name="pos"]');
   
     /* 1) Nombre / título (se refleja en la h2 de la preview) */
     if (nameInput && cardName) {
@@ -79,6 +80,16 @@ document.addEventListener('DOMContentLoaded', () => {
     bgRadios.forEach(r => {
       r.addEventListener('change', () => r.checked && applyBg(r.value));
       if (r.checked) applyBg(r.value);
+    });
+
+    /* 6) Posición del monto */
+    const applyBadgePosition = (posValue) => {
+      card.dataset.pos = posValue;
+    };
+
+    posRadios.forEach(r => {
+      r.addEventListener('change', () => r.checked && applyBadgePosition(r.value));
+      if (r.checked) applyBadgePosition(r.value); // Aplica la posición inicial
     });
   });
   

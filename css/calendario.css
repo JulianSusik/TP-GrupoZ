@@ -105,11 +105,8 @@ ol {
     /* Simula el estilo de #search-form para la alineación */
     display: flex;
     align-items: center;
-    margin: 0 15px;
-    /* Mantiene la posición relativa que definiste */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    flex-grow: 1; /* Ocupa el espacio disponible */
+    justify-content: center; /* Centra el contenido */
 }
 
 /* ------------------------------------------- */
@@ -254,4 +251,3 @@ ol {
     padding: 0.2em;
   }
 }
-
