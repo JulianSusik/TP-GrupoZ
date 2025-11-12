@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Regex
   const reTarjeta = /^\d{16}$/;
-  const reCvv = /^\d{3}$/;
+  const reCvv = /^\d{4}$/;
   const reCbu = /^\d{22}$/;
 
   function mostrarError(mensajes) {
