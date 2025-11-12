@@ -85,6 +85,98 @@ body {
   margin-left: 1.5rem;
 }
 
+/* === MODAL GENERAL === */
+dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+  width: 350px;
+  max-width: 90%;
+  background: #fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease-out;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === CONTENIDO DEL MODAL === */
+.dlg-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.dlg-inner h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #222;
+}
+
+.dlg-body {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.dlg-body p strong {
+  color: #222;
+}
+
+/* === BOTONES DEL MODAL === */
+.dlg-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-green {
+  background: #3cb46e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.btn-green:hover {
+  background: #2e995a;
+}
+
+.btn-red {
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.btn-red:hover {
+  background: #d93c3c;
+}
+
+
 .transferencia input {
   border: 1px solid #aaa;
   border-radius: 4px;
