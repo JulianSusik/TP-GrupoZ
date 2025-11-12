@@ -190,13 +190,17 @@ input:focus {
   text-decoration: none;
 }
 
+.eliminar-cuenta {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .btn-eliminar {
   background-color: #c62828;
   color: white;
   border: none;
   padding: 10px 20px;
-  margin-top: 20px;
-  margin-left: 18em;
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s;
