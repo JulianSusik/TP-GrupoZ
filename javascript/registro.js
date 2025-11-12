@@ -196,6 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     usuariosGuardados.push(nuevoUsuario);
     localStorage.setItem("usuarios", JSON.stringify(usuariosGuardados));
+    localStorage.setItem(`carrito_${nuevoUsuario.usuario}`, JSON.stringify([]));
 
     alert("¡Registro exitoso!");
     window.location.href = "../index.html";
