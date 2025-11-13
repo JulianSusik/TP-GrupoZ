@@ -33,7 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (encontrado) {
       errorMsg.textContent = "";
-      localStorage.setItem("usuarioSesionIniciada", JSON.stringify(encontrado)); // ✅ Esto faltaba
+      // Asegurar que los datos de tarjeta estén en la sesión
+      const usuarioSesion = {
+        ...encontrado,
+        numeroTarjeta: encontrado.numeroTarjeta || "",
+        codTarjeta: encontrado.codTarjeta || ""
+      };
+      localStorage.setItem("usuarioSesionIniciada", JSON.stringify(usuarioSesion));
       alert("¡Inicio de sesión exitoso!");
       window.location.href = "./html/home.html";
     } else {

@@ -36,11 +36,10 @@
 
         <nav>
           <ul>
-            <li><a href="home.html">Inicio</a></li>
             <li><a href="calendario.html">Calendario</a></li>
             <li><a href="contacto.html">Contacto</a></li>
             <li><a href="giftcard.html">Giftcard</a></li>
-            <li><a href="formulario.html">Inscripcion</a></li>
+            <li><a href="todos-los-cursos.html">Todos los cursos</a></li>
             <li><a href="perfil.html">Perfil</a></li>
             <!-- INICIO NUEVA ESTRUCTURA CARRITO -->
             <li class="submenu">
@@ -84,6 +83,26 @@
       <form class="perfil-form" action="#">
         <fieldset>
           <legend>Datos de Acceso</legend>
+
+          <label for="nombre">Nombre:</label>
+          <input
+            id="nombre"
+            name="nombre"
+            type="text"
+            placeholder="Tu nombre"
+          />
+
+          <label for="apellido">Apellido:</label>
+          <input
+            id="apellido"
+            name="apellido"
+            type="text"
+            placeholder="Tu apellido"
+          />
+
+          <label for="usuario">Nombre de Usuario:</label>
+          <input id="usuario" name="usuario" type="text" disabled />
+
           <label for="email">Email:</label>
           <input
             id="email"
@@ -99,7 +118,6 @@
             id="contrasenia"
             name="contrasenia"
             placeholder="************"
-            required
           />
 
           <label for="ingresar-contrasenia">Nueva Contraseña:</label>
@@ -108,7 +126,6 @@
             id="ingresar-contrasenia"
             name="ingresar-contrasenia"
             placeholder="Ingresar nueva contraseña"
-            required
           />
 
           <label for="repetir-contrasenia">Repetir Contraseña:</label>
@@ -117,7 +134,27 @@
             id="repetir-contrasenia"
             name="repetir-contrasenia"
             placeholder="Repetir contraseña"
-            required
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Datos de Pago</legend>
+          <label for="numeroTarjeta">Número de Tarjeta:</label>
+          <input
+            type="text"
+            id="numeroTarjeta"
+            name="numeroTarjeta"
+            placeholder="1234567890123456"
+            maxlength="16"
+          />
+
+          <label for="codTarjeta">CVV:</label>
+          <input
+            type="text"
+            id="codTarjeta"
+            name="codTarjeta"
+            placeholder="123"
+            maxlength="4"
           />
         </fieldset>
 

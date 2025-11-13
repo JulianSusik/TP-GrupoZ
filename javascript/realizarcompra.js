@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Cargar datos de tarjeta del usuario si están guardados
+  const usuarioSesion = JSON.parse(localStorage.getItem("usuarioSesionIniciada"));
+  if (usuarioSesion) {
+    const numeroTarjetaInput = document.getElementById("numeroTarjeta");
+    const codTarjetaInput = document.getElementById("codTarjeta");
+    if (numeroTarjetaInput && usuarioSesion.numeroTarjeta) {
+      numeroTarjetaInput.value = usuarioSesion.numeroTarjeta;
+    }
+    if (codTarjetaInput && usuarioSesion.codTarjeta) {
+      codTarjetaInput.value = usuarioSesion.codTarjeta;
+    }
+  }
+
   const form = document.querySelector(".form-section");
   const btnConfirmar = document.getElementById("btn-confirmar-compra");
 
@@ -14,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Regex
   const reTarjeta = /^\d{16}$/;
-  const reCvv = /^\d{4}$/;
+  const reCvv = /^\d{3,4}$/; // Corregido para aceptar 3 o 4 dígitos
   const reCbu = /^\d{22}$/;
 
   function mostrarError(mensajes) {
@@ -38,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const numTarjeta = document.getElementById("numeroTarjeta").value.trim();
         const codTarjeta = document.getElementById("codTarjeta").value.trim();
         if (!reTarjeta.test(numTarjeta)) errores.push("Número de tarjeta inválido.");
-        if (!reCvv.test(codTarjeta)) errores.push("CVV inválido.");
+        if (!reCvv.test(codTarjeta)) errores.push("El CVV debe tener 3 o 4 dígitos.");
         break;
 
       case "cupon":

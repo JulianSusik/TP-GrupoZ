@@ -14,14 +14,43 @@ document.addEventListener("DOMContentLoaded", () => {
   // Mostrar nombre en la cabecera del perfil
   const nombreUsuario = document.getElementById("nombre-usuario");
   if (nombreUsuario) {
-    nombreUsuario.textContent =
-      usuarioSesion.nombre || usuarioSesion.usuario || "Usuario";
+    // Muestra nombre y apellido si existen, si no, el usuario
+    const nombreCompleto = (usuarioSesion.nombre && usuarioSesion.apellido)
+      ? `${usuarioSesion.nombre} ${usuarioSesion.apellido}`
+      : usuarioSesion.usuario;
+    nombreUsuario.textContent = nombreCompleto || "Usuario";
   }
 
   // Mostrar datos en los inputs
+  document.getElementById("nombre").value = usuarioSesion.nombre || "";
+  document.getElementById("apellido").value = usuarioSesion.apellido || "";
+  document.getElementById("usuario").value = usuarioSesion.usuario || "";
   document.getElementById("email").value = usuarioSesion.email || "";
+
   document.getElementById("contrasenia").value =
     usuarioSesion.contrasenia || "";
+
+  // Cargar datos de tarjeta desde la sesión o desde la lista de usuarios si no están en la sesión
+  let numeroTarjeta = usuarioSesion.numeroTarjeta || "";
+  let codTarjeta = usuarioSesion.codTarjeta || "";
+
+  if (!numeroTarjeta || !codTarjeta) {
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    const usuarioGuardado = usuarios.find(u => u.usuario === usuarioSesion.usuario);
+    if (usuarioGuardado) {
+      numeroTarjeta = usuarioGuardado.numeroTarjeta || "";
+      codTarjeta = usuarioGuardado.codTarjeta || "";
+      // Actualizar la sesión con los datos cargados
+      usuarioSesion.numeroTarjeta = numeroTarjeta;
+      usuarioSesion.codTarjeta = codTarjeta;
+      localStorage.setItem("usuarioSesionIniciada", JSON.stringify(usuarioSesion));
+    }
+  }
+
+  document.getElementById("numeroTarjeta").value = numeroTarjeta;
+  // NUEVO: Asignar valor al campo del código de seguridad
+  const codTarjetaInput = document.getElementById("codTarjeta");
+  if (codTarjetaInput) codTarjetaInput.value = codTarjeta;
 
   // ✅ Cerrar sesión correctamente
   const btnCerrar = document.querySelector(".btn-cerrar");
@@ -37,6 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    const nuevoNombre = document.getElementById("nombre").value.trim();
+    const nuevoApellido = document.getElementById("apellido").value.trim();
     const nuevoEmail = document.getElementById("email").value.trim();
     const nuevaPass = document
       .getElementById("ingresar-contrasenia")
@@ -51,8 +82,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Actualiza los datos del usuario en localStorage
+    usuarioSesion.nombre = nuevoNombre;
+    usuarioSesion.apellido = nuevoApellido;
     usuarioSesion.email = nuevoEmail;
     if (nuevaPass) usuarioSesion.contrasenia = nuevaPass;
+    usuarioSesion.numeroTarjeta = document.getElementById("numeroTarjeta").value.trim();
+    const nuevoCodTarjeta = document.getElementById("codTarjeta").value.trim();
+
+    // Validar que el código de seguridad tenga 3 o 4 dígitos si se proporciona
+    const reCvv = /^\d{3,4}$/;
+    if (nuevoCodTarjeta && !reCvv.test(nuevoCodTarjeta)) {
+      alert("El código de seguridad debe tener 3 o 4 dígitos numéricos.");
+      return; // Detener el proceso de guardado
+    }
+    usuarioSesion.codTarjeta = nuevoCodTarjeta;
+
+    // Actualizar también en la lista de usuarios
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    const usuarioIndex = usuarios.findIndex(u => u.usuario === usuarioSesion.usuario);
+    if (usuarioIndex !== -1) {
+      usuarios[usuarioIndex] = { ...usuarios[usuarioIndex], ...usuarioSesion };
+      localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    }
 
     localStorage.setItem(
       "usuarioSesionIniciada",

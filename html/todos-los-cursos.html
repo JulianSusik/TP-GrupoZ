@@ -1,47 +1,33 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario de Contacto</title>
-    <link rel="stylesheet" href="../css/confirmacion.css" />
-    <link rel="stylesheet" href="../css/header-footer.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <title>Contacto</title>
+    <title>Todos los cursos</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/header-footer.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
-
   <body>
     <header>
       <div class="contenedor-header">
         <div class="logo">
-          <a href="../html/home.html"><img src="../img/logo.png" alt="Logo del sitio" /></a>
+          <a href="home.html"><img src="../img/logo.png" alt="Logo del sitio" /></a>
           <span class="site-title">UDEMY CURSOS</span>
         </div>
 
-        <div class="select-wrapper">
-        <select id="buscador-cursos" onchange="location = this.value;">
-        <option value="">Buscar cursos...</option>
-        <option value="../cursos/detalle-curso.html?id=1">HTML Básico</option>
-        <option value="../cursos/detalle-curso.html?id=2">CSS Avanzado</option>
-        <option value="../cursos/detalle-curso.html?id=3">JavaScript Inicial</option>
-        <option value="../cursos/detalle-curso.html?id=4">Base de Datos</option>
-        <option value="../cursos/detalle-curso.html?id=5">Python Básico</option>
-        <option value="../cursos/detalle-curso.html?id=6">React Avanzado</option>
-        <option value="../cursos/detalle-curso.html?id=7">Node.js Inicial</option>
-        <option value="../cursos/detalle-curso.html?id=8">SQL Avanzado</option>
-        </select>
-        </div>
-
+        <form action="" id="search-form">
+            <input type="search"
+            id="search-input"
+            placeholder="Buscar cursos por nombre...">
+        </form>
 
         <nav>
           <ul>
             <li><a href="calendario.html">Calendario</a></li>
             <li><a href="contacto.html">Contacto</a></li>
             <li><a href="giftcard.html">Giftcard</a></li>
-            <li><a href="todos-los-cursos.html">Todos los cursos</a></li>
+            <li><a href="todos-los-cursos.html" class="activo">Todos los cursos</a></li>
             <li><a href="perfil.html">Perfil</a></li>
             <!-- INICIO NUEVA ESTRUCTURA CARRITO -->
             <li class="submenu">
@@ -60,6 +46,7 @@
                           </tr>
                       </thead>
                       <tbody id="containerCarrito"></tbody>
+                      <!-- NUEVO: Pie de tabla para el total -->
                       <tfoot>
                         <tr>
                           <td colspan="4" id="carrito-total-resumen" class="carrito-total-resumen">Total: $0</td>
@@ -76,18 +63,23 @@
     </header>
 
     <main>
-      <div class="mensaje-exito">¡El mensaje se envió correctamente!</div>
-      <a href="contacto.html" class="boton-volver">Volver al formulario</a>
+      <h1>Todos los cursos</h1>
+
+      <section>
+        <div id="todos-container" class="cursos-destacados">
+        </div>
+      </section>
     </main>
+
     <footer>
       <div class="contenedor-footer">
         <div class="columna">
           <h3>Integrantes</h3>
           <ul>
             <li>Ana Maria Alderete - DNI 36782140</li>
-            <li>Luis Maurcicio Frieri - DNI 30700098</li>
-            <li>Agustin Fernando Pelle - DNI 42116498</li>
-            <li>Julian Alan Susik - DNI 44816527</li>
+            <li>Luis Mauricio Frieri - DNI 30700098</li>
+            <li>Agustín Fernando Pelle - DNI 42116498</li>
+            <li>Julián Alan Susik - DNI 44816527</li>
           </ul>
         </div>
 
@@ -110,6 +102,7 @@
         </div>
       </div>
     </footer>
+    <script src="../javascript/todos-los-cursos.js" type="module"></script>
     <script src="../javascript/carrito.js"></script>
   </body>
 </html>

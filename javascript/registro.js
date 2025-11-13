@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (metodoSeleccionado === "tarjeta") {
       nuevoUsuario.numeroTarjeta = tarjetaInput.value;
-      nuevoUsuario.codigoSeguridad = codigoInput.value;
+      nuevoUsuario.codTarjeta = document.getElementById("codigoSeguridad").value.trim();
     } else if (metodoSeleccionado === "cupon") {
       nuevoUsuario.formaPago = pagoFacil.checked ? "pago-facil" : "rapipago";
     }
