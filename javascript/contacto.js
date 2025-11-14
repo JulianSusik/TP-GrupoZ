@@ -4,7 +4,7 @@ const apellido = document.querySelector('#apellido');
 const email = document.querySelector('#email');
 const telefono = document.querySelector('#tel');
 const mensaje = document.querySelector('#mensaje');
-const contador = document.querySelector('#contador');
+const contador = document.querySelector('#contador-mensaje');
 
 const modalContacto = document.getElementById('modal-contacto');
 const closeButtons = document.querySelectorAll('.modal__close');
