@@ -15,24 +15,41 @@
     <header>
       <div class="contenedor-header">
         <div class="logo">
-          <a href="../html/home.html"><img src="../img/logo.png" alt="Logo del sitio" /></a>
+          <a href="../html/home.html"
+            ><img src="../img/logo.png" alt="Logo del sitio"
+          /></a>
           <span class="site-title">UDEMY CURSOS</span>
         </div>
 
         <div class="select-wrapper">
-        <select id="buscador-cursos" onchange="location = this.value;">
-        <option value="">Buscar cursos...</option>
-        <option value="../cursos/detalle-curso.html?id=1">HTML Básico</option>
-        <option value="../cursos/detalle-curso.html?id=2">CSS Avanzado</option>
-        <option value="../cursos/detalle-curso.html?id=3">JavaScript Inicial</option>
-        <option value="../cursos/detalle-curso.html?id=4">Base de Datos</option>
-        <option value="../cursos/detalle-curso.html?id=5">Python Básico</option>
-        <option value="../cursos/detalle-curso.html?id=6">React Avanzado</option>
-        <option value="../cursos/detalle-curso.html?id=7">Node.js Inicial</option>
-        <option value="../cursos/detalle-curso.html?id=8">SQL Avanzado</option>
-        </select>
+          <select id="buscador-cursos" onchange="location = this.value;">
+            <option value="">Buscar cursos...</option>
+            <option value="../cursos/detalle-curso.html?id=1">
+              HTML Básico
+            </option>
+            <option value="../cursos/detalle-curso.html?id=2">
+              CSS Avanzado
+            </option>
+            <option value="../cursos/detalle-curso.html?id=3">
+              JavaScript Inicial
+            </option>
+            <option value="../cursos/detalle-curso.html?id=4">
+              Base de Datos
+            </option>
+            <option value="../cursos/detalle-curso.html?id=5">
+              Python Básico
+            </option>
+            <option value="../cursos/detalle-curso.html?id=6">
+              React Avanzado
+            </option>
+            <option value="../cursos/detalle-curso.html?id=7">
+              Node.js Inicial
+            </option>
+            <option value="../cursos/detalle-curso.html?id=8">
+              SQL Avanzado
+            </option>
+          </select>
         </div>
-
 
         <nav>
           <ul>
@@ -45,26 +62,38 @@
             <li class="submenu">
               <a href="../html/carrito.html" class="carrito-link">
                 <div id="contador" class="contador">0</div>
-                <img src="../img/carrito-de-compras.png" id="img-carrito" alt="Carrito">
+                <img
+                  src="../img/carrito-de-compras.png"
+                  id="img-carrito"
+                  alt="Carrito"
+                />
               </a>
               <div class="carrito" id="carrito-resumen">
-                  <table class="carrito__color" id="lista-carrito">
-                      <thead>
-                          <tr>
-                              <th>Producto</th>
-                              <th>Cantidad</th>
-                              <th>Precio</th>
-                              <th></th>
-                          </tr>
-                      </thead>
-                      <tbody id="containerCarrito"></tbody>
-                      <tfoot>
-                        <tr>
-                          <td colspan="4" id="carrito-total-resumen" class="carrito-total-resumen">Total: $0</td>
-                        </tr>
-                      </tfoot>
-                  </table>
-                  <a href="#" id="vaciarCarrito" class="btnVaciar">Vaciar Carrito</a>
+                <table class="carrito__color" id="lista-carrito">
+                  <thead>
+                    <tr>
+                      <th>Producto</th>
+                      <th>Cantidad</th>
+                      <th>Precio</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="containerCarrito"></tbody>
+                  <tfoot>
+                    <tr>
+                      <td
+                        colspan="4"
+                        id="carrito-total-resumen"
+                        class="carrito-total-resumen"
+                      >
+                        Total: $0
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+                <a href="#" id="vaciarCarrito" class="btnVaciar"
+                  >Vaciar Carrito</a
+                >
               </div>
             </li>
             <!-- FIN NUEVA ESTRUCTURA CARRITO -->
@@ -137,8 +166,8 @@
           />
         </fieldset>
 
-        <fieldset>
-          <legend>Datos de Pago</legend>
+        <!-- <fieldset>
+          <legend>Cambiar metodo de Pago</legend>
           <label for="numeroTarjeta">Número de Tarjeta:</label>
           <input
             type="text"
@@ -156,6 +185,131 @@
             placeholder="123"
             maxlength="4"
           />
+
+          <div class="campo">
+            <label>
+              <input id="cupon" type="radio" name="metodoPago" value="cupon" />
+              Cupón de pago
+            </label>
+          </div>
+
+          <div class="campo">
+            <label>
+              <input
+                id="pago-facil"
+                type="checkbox"
+                name="formaPago"
+                value="pago-facil"
+              />
+              Pago Fácil
+            </label>
+            <label>
+              <input
+                id="rapipago"
+                type="checkbox"
+                name="formaPago"
+                value="rapipago"
+              />
+              Rápipago
+            </label>
+          </div>
+
+          <div class="campo">
+            <label>
+              <input
+                id="transferencia"
+                type="radio"
+                name="metodoPago"
+                value="transferencia"
+              />
+              Transferencia bancaria
+            </label>
+            <span>CBU: 0123456789012345678901</span>
+          </div>
+        </fieldset> -->
+
+        <fieldset>
+          <legend>Actualizar datos de pago</legend>
+
+          <div class="campo">
+            <label>
+              <input
+                id="tarjeta"
+                type="radio"
+                name="metodoPago"
+                value="tarjeta"
+                checked
+              />
+              Tarjeta de Crédito
+            </label>
+          </div>
+
+          <div class="campo">
+            <label for="numeroTarjeta">Número de tarjeta:</label>
+            <input
+              type="text"
+              id="numeroTarjeta"
+              name="numeroTarjeta"
+              inputmode="numeric"
+              pattern="[0-9]{13,19}"
+              maxlength="19"
+              placeholder="12345678910111213"
+            />
+          </div>
+
+          <div class="campo">
+            <label for="codigoSeguridad">Código de seguridad:</label>
+            <input
+              type="text"
+              id="codigoSeguridad"
+              name="codigoSeguridad"
+              inputmode="numeric"
+              pattern="[0-9]{3,4}"
+              maxlength="4"
+              placeholder="000"
+            />
+          </div>
+
+          <div class="campo">
+            <label>
+              <input id="cupon" type="radio" name="metodoPago" value="cupon" />
+              Cupón de pago
+            </label>
+          </div>
+
+          <div class="campo">
+            <label>
+              <input
+                id="pago-facil"
+                type="checkbox"
+                name="formaPago"
+                value="pago-facil"
+              />
+              Pago Fácil
+            </label>
+            <label>
+              <input
+                id="rapipago"
+                type="checkbox"
+                name="formaPago"
+                value="rapipago"
+              />
+              Rápipago
+            </label>
+          </div>
+
+          <div class="campo">
+            <label>
+              <input
+                id="transferencia"
+                type="radio"
+                name="metodoPago"
+                value="transferencia"
+              />
+              Transferencia bancaria
+            </label>
+            <span>CBU: 0123456789012345678901</span>
+          </div>
         </fieldset>
 
         <div class="form-actions">
@@ -171,7 +325,7 @@
         </button>
       </div>
     </main>
-    
+
     <!-- NUEVA SECCIÓN DE HISTORIAL DE COMPRAS -->
     <section class="historial-compras container">
       <h2 class="title">Historial de Compras</h2>
