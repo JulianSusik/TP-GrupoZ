@@ -4,11 +4,42 @@ document.addEventListener("DOMContentLoaded", () => {
   if (usuarioSesion) {
     const numeroTarjetaInput = document.getElementById("numeroTarjeta");
     const codTarjetaInput = document.getElementById("codTarjeta");
+
     if (numeroTarjetaInput && usuarioSesion.numeroTarjeta) {
       numeroTarjetaInput.value = usuarioSesion.numeroTarjeta;
     }
-    if (codTarjetaInput && usuarioSesion.codTarjeta) {
-      codTarjetaInput.value = usuarioSesion.codTarjeta;
+    if (codTarjetaInput && usuarioSesion.codigoSeguridad) {
+  codTarjetaInput.value = usuarioSesion.codigoSeguridad;
+}
+
+    // 🔹 Cargar método de pago guardado (NUEVO BLOQUE)
+    if (usuarioSesion.metodoPago) {
+      const metodo = usuarioSesion.metodoPago;
+
+      if (metodo === "tarjeta") {
+        document.getElementById("tarjeta").checked = true;
+      }
+
+      if (metodo.startsWith("cupón")) {
+        document.getElementById("cupon").checked = true;
+
+        if (metodo.includes("pago fácil")) {
+          document.getElementById("pago-facil").checked = true;
+        }
+
+        if (metodo.includes("rapipago")) {
+          document.getElementById("rapipago").checked = true;
+        }
+      }
+
+      if (metodo === "transferencia") {
+        document.getElementById("transferencia").checked = true;
+      }
+
+      // 🔹 Disparar la visibilidad correcta
+      const normalizado = metodo.includes("cupón") ? "cupon" : metodo;
+      document.querySelector(`input[value="${normalizado}"]`)
+        ?.dispatchEvent(new Event("change"));
     }
   }
 
