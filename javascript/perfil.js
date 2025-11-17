@@ -67,11 +67,8 @@ function cargarMetodoPago() {
 
   if (mp.startsWith("tarjeta")) {
     metodoTarjeta.checked = true;
-    // numeroTarjeta.value = usuarioLogueado.numeroTarjeta || "";
-    // codigoSeguridad.value = usuarioLogueado.codigoSeguridad || "";
-    // Dejamos los campos VACÍOS para ingresar tarjeta nueva
-    numeroTarjeta.value = "";
-    codigoSeguridad.value = "";
+    numeroTarjeta.value = usuarioLogueado.numeroTarjeta || "";
+    codigoSeguridad.value = usuarioLogueado.codigoSeguridad || "";
     mostrarCamposTarjeta(true);
     mostrarCupon(false);
   }
@@ -159,14 +156,14 @@ form.addEventListener("submit", (e) => {
     if (pagoFacil.checked) opciones.push("pago fácil");
     if (rapipago.checked) opciones.push("rapipago");
 
-    // if (opciones.length === 0) {
-    //   return alert(
-    //     "Debe seleccionar un cupón de pago (Rapipago o Pago Fácil)."
-    //   );
-    // }
+    if (opciones.length === 0) {
+      return alert(
+        "Debe seleccionar un cupón de pago (Rapipago o Pago Fácil)."
+      );
+    }
 
     metodoFinal =
-      "cupón" + (opciones.length ? " - " + opciones.join(", ") : "");
+      "cupón" + (opciones.length ? "-" + opciones.join(", ") : "");
   }
 
   if (metodoTransferencia.checked) {

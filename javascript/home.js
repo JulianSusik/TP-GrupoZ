@@ -110,6 +110,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Volver a dibujar, pero solo con los cursos filtrados
     renderizarCursos(destacadosFiltrados, destacadosContainer);
     renderizarCursos(otrosFiltrados, otrosContainer);
+
+    // Desplazar la vista hacia los resultados si hay un término de búsqueda
+    if (terminoBusqueda.length > 0) {
+      // Usamos el contenedor de destacados como punto de referencia
+      const seccionDestacados = document.getElementById('cursos-destacados');
+      if (seccionDestacados) seccionDestacados.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   });
 
   // --- 5. EJECUCIÓN INICIAL ---

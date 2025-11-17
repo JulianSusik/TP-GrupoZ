@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // 🔹 Disparar la visibilidad correcta
-      const normalizado = metodo.includes("cupón") ? "cupon" : metodo;
+      // Si el método es 'cupón-rapipago', el valor del input es solo 'cupon'
+      const normalizado = metodo.startsWith("cupón") ? "cupon" : metodo;
       document.querySelector(`input[value="${normalizado}"]`)
         ?.dispatchEvent(new Event("change"));
     }
@@ -113,6 +114,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Inicialmente desactivar las opciones de cupón
   cuponOpciones.forEach((chk) => (chk.disabled = true));
+
+  // =================================================================
+  // 🔹 AHORA, CARGAR DATOS DEL USUARIO (TARJETA Y MÉTODO DE PAGO)
+  // =================================================================
+  if (usuarioSesion) {
+    // Cargar datos de tarjeta
+    const numeroTarjetaInput = document.getElementById("numeroTarjeta");
+    const codTarjetaInput = document.getElementById("codTarjeta");
+    if (numeroTarjetaInput && usuarioSesion.numeroTarjeta) {
+      numeroTarjetaInput.value = usuarioSesion.numeroTarjeta;
+    }
+    if (codTarjetaInput && usuarioSesion.codigoSeguridad) {
+      codTarjetaInput.value = usuarioSesion.codigoSeguridad;
+    }
+
+    // Cargar método de pago guardado
+    if (usuarioSesion.metodoPago) {
+      const metodo = usuarioSesion.metodoPago;
+      const normalizado = metodo.startsWith("cupón") ? "cupon" : metodo;
+      const inputMetodo = document.querySelector(`input[value="${normalizado}"]`);
+
+      if (inputMetodo) {
+        inputMetodo.checked = true;
+        // Disparamos el 'change' para que se muestren/oculten los campos correctos
+        inputMetodo.dispatchEvent(new Event("change"));
+      }
+
+      // Si es cupón, marcamos la opción específica (Pago Fácil / Rapipago)
+      if (metodo.startsWith("cupón")) {
+        if (metodo.includes("pago fácil")) {
+          document.getElementById("pago-facil").checked = true;
+        }
+        if (metodo.includes("rapipago")) {
+          document.getElementById("rapipago").checked = true;
+        }
+      }
+    }
+  }
 
   btnConfirmar.addEventListener("click", () => {
     const errores = validarFormulario();

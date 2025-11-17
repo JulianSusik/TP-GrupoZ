@@ -49,10 +49,10 @@ form.addEventListener('submit', e => {
   // Validacion de telefono
   const valorTel = telefono.value.trim();
   if (valorTel !== "") {
-    const regexTel = /^\d{4}-\d{4}$/;
+    const regexTel = /^\d{2,8}-?\d{4,8}$/;
     if (!regexTel.test(valorTel)) {
       document.querySelector('.js-error-tel').textContent =
-        "Formato incorrecto. Usa 1234-5678 (guion obligatorio).";
+        "Formato incorrecto. Ingresa un número válido (el guion es opcional).";
       hayError = true;
     }
   }
